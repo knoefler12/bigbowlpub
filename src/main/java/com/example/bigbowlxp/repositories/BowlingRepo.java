@@ -9,6 +9,10 @@ public class BowlingRepo {
 
     private JdbcTemplate jdbcTemplate;
 
+    public JdbcTemplate getTemplate() {
+        return jdbcTemplate;
+    }
+
     @Autowired
     public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;

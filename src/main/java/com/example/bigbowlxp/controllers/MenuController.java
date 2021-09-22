@@ -14,4 +14,7 @@ public class MenuController {
         this.menuService = menuService;
     }
 
+    public MenuService getMenuService() {
+        return menuService;
+    }
 }

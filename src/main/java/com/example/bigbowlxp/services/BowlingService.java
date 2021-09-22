@@ -14,4 +14,8 @@ public class BowlingService {
         this.bowlingRepo = bowlingRepo;
     }
 
+    public BowlingRepo getBowlingRepo() {
+        return bowlingRepo;
+    }
+
 }

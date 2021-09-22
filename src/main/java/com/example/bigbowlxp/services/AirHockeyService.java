@@ -15,4 +15,7 @@ public class AirHockeyService {
     }
 
 
+    public AirHockeyRepo getAirHockeyRepo() {
+        return airHockeyRepo;
+    }
 }

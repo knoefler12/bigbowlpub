@@ -14,4 +14,7 @@ public class MenuRepo {
         this.jdbcTemplate = jdbcTemplate;
     }
 
+    public JdbcTemplate getTemplate() {
+        return jdbcTemplate;
+    }
 }

@@ -17,4 +17,7 @@ public class AirHockeyController {
 
     }
 
+    public AirHockeyService getAirHockeyService() {
+        return airHockeyService;
+    }
 }
