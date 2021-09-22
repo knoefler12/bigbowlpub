@@ -13,4 +13,8 @@ public class BowlingController {
     public void setBowlingService(BowlingService bowlingService) {
         this.bowlingService = bowlingService;
     }
+
+    public BowlingService getBowlingService() {
+        return bowlingService;
+    }
 }
