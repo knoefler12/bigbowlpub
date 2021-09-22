@@ -51,7 +51,7 @@ public class ArchitectureTest {
         BowlingRepo bowlingRepo = bowlingService.getBowlingRepo();
         assertNotNull(bowlingRepo);
 
-        JdbcTemplate template = BowlingRepo.getTemplate();
+        JdbcTemplate template = bowlingRepo.getTemplate();
         assertNotNull(template);
 
     }

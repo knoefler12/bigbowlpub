@@ -21,4 +21,7 @@ public class MenuService {
         this.menuRepo = menuRepo;
     }
 
+    public MenuRepo getMenuRepo() {
+        return menuRepo;
+    }
 }

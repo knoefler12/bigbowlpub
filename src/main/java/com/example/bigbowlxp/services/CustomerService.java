@@ -14,4 +14,7 @@ public class CustomerService {
         this.customerRepo = customerRepo;
     }
 
+    public CustomerRepo getCustomerRepo() {
+        return customerRepo;
+    }
 }

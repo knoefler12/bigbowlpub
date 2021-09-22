@@ -13,4 +13,8 @@ public class AirHockeyRepo {
     public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
+
+    public JdbcTemplate getTemplate() {
+        return jdbcTemplate;
+    }
 }

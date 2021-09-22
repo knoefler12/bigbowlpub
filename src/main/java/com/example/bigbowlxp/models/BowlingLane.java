@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class Bowling {
+public class BowlingLane {
 
     @Id
     private int id;
@@ -12,7 +12,7 @@ public class Bowling {
     private boolean isChildLane;
 
 
-    public Bowling() {
+    public BowlingLane() {
     }
 
     public int getId() {

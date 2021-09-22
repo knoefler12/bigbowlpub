@@ -14,4 +14,7 @@ public class CustomerRepo {
         this.jdbcTemplate = jdbcTemplate;
     }
 
+    public JdbcTemplate getTemplate() {
+        return jdbcTemplate;
+    }
 }

@@ -13,4 +13,8 @@ public class CustomerController {
     public void setCustomerService(CustomerService customerService) {
         this.customerService = customerService;
     }
+
+    public CustomerService getCustomerService() {
+        return customerService;
+    }
 }
