@@ -87,4 +87,19 @@ public class ModelTest {
         assertThat(menu.getPrice() == 1234.5);
     }
 
+    @Test
+    void equipmentModelTest(){
+        Equipment equipment = new Equipment();
+        equipment.setId(1);
+        equipment.setName("Sko");
+        equipment.setType("størrelse 67");
+        equipment.setAmount(6);
+
+        assertThat(equipment.getId() == 1);
+        assertThat(equipment.getName().equals("Sko"));
+        assertThat(equipment.getType().equals("størrelse 67"));
+        assertThat(equipment.getAmount() == 6);
+
+    }
+
 }
