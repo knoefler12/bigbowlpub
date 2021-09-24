@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
@@ -18,7 +19,7 @@ public class BowlingLaneApplicationTest {
 
     @Test
     void laneListTest(){
-        ArrayList<BowlingLane> lanes = bowlingService.getLanes();
+        List<BowlingLane> lanes = bowlingService.getLanes();
         assertThat(lanes.size() == 24);
         assertThat(lanes.get(0).isChildLane());
         assertThat(lanes.get(1).isChildLane());

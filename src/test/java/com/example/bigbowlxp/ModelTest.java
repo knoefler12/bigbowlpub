@@ -53,7 +53,7 @@ public class ModelTest {
 
     }
 
-    @Test
+   /* @Test
     void customerModelTest(){
         Customer customer = new Customer();
         customer.setCustomerid(1);
@@ -75,7 +75,7 @@ public class ModelTest {
         assertThat(customer.getStreet().equals("Sverrisgøta"));
         assertThat(customer.getPhoneNumber().equals("00298421634"));
         assertThat(customer.getStreetNumber().equals("5b"));
-    }
+    }*/
 
     @Test
     void menuModelTest(){
