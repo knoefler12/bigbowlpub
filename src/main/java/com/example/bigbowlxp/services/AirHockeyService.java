@@ -1,8 +1,12 @@
 package com.example.bigbowlxp.services;
 
+import com.example.bigbowlxp.models.AirHockeyTable;
+import com.example.bigbowlxp.models.Customer;
 import com.example.bigbowlxp.repositories.AirHockeyRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class AirHockeyService {
@@ -14,6 +18,9 @@ public class AirHockeyService {
         this.airHockeyRepo = airHockeyRepo;
     }
 
+    public List<AirHockeyTable> fetchAirHockeyTable(){
+        return airHockeyRepo.fetchAirHockey();
+    }
 
     public AirHockeyRepo getAirHockeyRepo() {
         return airHockeyRepo;
