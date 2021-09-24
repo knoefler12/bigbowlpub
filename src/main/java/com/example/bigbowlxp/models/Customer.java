@@ -7,26 +7,26 @@ import javax.persistence.Id;
 public class Customer {
 
     @Id
-    private int customerid;
+    private int customerId;
     private String firstName;
     private String lastName;
-    private String phoneNumber;
+    private String phone;
     private String eMail;
-    private String street;
+    private String streetAddress;
     private String streetNumber;
     private String floor;
-    private String thtv;
+    private String apartment;
     private String zipCode;
 
     public Customer() {
     }
 
-    public int getCustomerid() {
-        return customerid;
+    public int getCustomerId() {
+        return customerId;
     }
 
-    public void setCustomerid(int id) {
-        this.customerid = id;
+    public void setCustomerId(int id) {
+        this.customerId = id;
     }
 
     public String getFirstName() {
@@ -46,12 +46,12 @@ public class Customer {
     }
 
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setPhone(String phoneNumber) {
+        this.phone = phoneNumber;
     }
 
     public String geteMail() {
@@ -62,12 +62,12 @@ public class Customer {
         this.eMail = eMail;
     }
 
-    public String getStreet() {
-        return street;
+    public String getStreetAddress() {
+        return streetAddress;
     }
 
-    public void setStreet(String street) {
-        this.street = street;
+    public void setStreetAddress(String street) {
+        this.streetAddress = street;
     }
 
     public String getStreetNumber() {
@@ -87,12 +87,12 @@ public class Customer {
         this.floor = apartment;
     }
 
-    public String getThtv() {
-        return thtv;
+    public String getApartment() {
+        return apartment;
     }
 
-    public void setThtv(String thtv) {
-        this.thtv = thtv;
+    public void setApartment(String thtv) {
+        this.apartment = thtv;
     }
 
     public String getZipCode() {
