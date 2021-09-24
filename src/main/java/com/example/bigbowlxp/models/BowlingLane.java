@@ -8,8 +8,9 @@ public class BowlingLane {
 
     @Id
     private int id;
-    private String status;
+    private boolean status;
     private boolean isChildLane;
+    private String description;
 
 
     public BowlingLane() {
@@ -23,11 +24,11 @@ public class BowlingLane {
         this.id = id;
     }
 
-    public String getStatus() {
+    public boolean getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(boolean status) {
         this.status = status;
     }
 
@@ -37,5 +38,15 @@ public class BowlingLane {
 
     public void setChildLane(boolean childLane) {
         isChildLane = childLane;
+    }
+
+    public void description(String s) {
+    }
+
+    public String getDescription() {
+        return description;
+    }
+    public void setDescription() {
+        this.description = description;
     }
 }

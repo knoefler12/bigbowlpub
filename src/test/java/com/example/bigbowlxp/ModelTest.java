@@ -49,7 +49,7 @@ public class ModelTest {
 
         assertThat(airHockeyTable.getId() == 1);
         assertThat(airHockeyTable.getStatus() == true);
-        assertThat(airHockeyTable.getDescription().equal("desc"));
+        assertThat(airHockeyTable.getDescription().equals("desc"));
 
     }
 

@@ -1,5 +1,6 @@
 package com.example.bigbowlxp.models;
 
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -8,7 +9,8 @@ public class AirHockeyTable {
 
     @Id
     private int id;
-    private String status;
+    private boolean status;
+    private String description;
 
 
     public AirHockeyTable() {
@@ -22,11 +24,20 @@ public class AirHockeyTable {
         this.id = id;
     }
 
-    public String getStatus() {
+    public boolean getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(boolean status) {
         this.status = status;
+    }
+
+
+    public void setDescription(String desc) {
+        this.description = description;
+    }
+
+    public String getDescription() {
+        return description;
     }
 }
