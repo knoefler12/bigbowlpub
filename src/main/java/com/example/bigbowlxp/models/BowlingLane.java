@@ -40,13 +40,11 @@ public class BowlingLane {
         isChildLane = childLane;
     }
 
-    public void description(String s) {
-    }
 
     public String getDescription() {
         return description;
     }
-    public void setDescription() {
+    public void setDescription(String description) {
         this.description = description;
     }
 }

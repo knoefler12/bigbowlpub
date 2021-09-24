@@ -33,7 +33,7 @@ public class AirHockeyTable {
     }
 
 
-    public void setDescription(String desc) {
+    public void setDescription(String description) {
         this.description = description;
     }
 
