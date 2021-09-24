@@ -1,7 +1,6 @@
 package com.example.bigbowlxp.repositories;
 
 import com.example.bigbowlxp.models.Customer;
-import com.example.bigbowlxp.models.Menu;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -23,9 +22,11 @@ public class CustomerRepo {
     public JdbcTemplate getTemplate() {
         return jdbcTemplate;
     }
+
     public List<Customer> fetchCustomer(){
         String sql = "SELECT * FROM sql4438617.customers";
         RowMapper<Customer> customerRowMapper = new BeanPropertyRowMapper<>(Customer.class);
         return jdbcTemplate.query(sql, customerRowMapper);
     }
+
 }

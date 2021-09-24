@@ -142,7 +142,7 @@
               <div class="col">
                 <div class="card card-small mb-4">
                   <div class="card-header border-bottom">
-                    <h6 class="m-0">Active Users</h6>
+                    <h6 class="m-0">Kunder</h6>
                   </div>
                   <div class="card-body p-0 pb-3 text-center">
                     <table class="table mb-0">
@@ -162,15 +162,15 @@
                       </thead>
                       <tbody>
                       <tr th:each="customers: ${customers}">
-                        <td th:text="${customers.customerid}"/>
+                        <td th:text="${customers.customerId}"/>
                         <td th:text="${customers.firstName}"/>
                         <td th:text="${customers.lastName}" />
-                        <td th:text="${customers.phoneNumber}" />
+                        <td th:text="${customers.phone}" />
                         <td th:text="${customers.eMail}" />
-                        <td th:text="${customers.street} "/>
+                        <td th:text="${customers.streetAddress} "/>
                         <td th:text="${customers.streetNumber} "/>
                         <td th:text="${customers.floor} "/>
-                        <td th:text="${customers.thtv} "/>
+                        <td th:text="${customers.apartment} "/>
                         <td th:text="${customers.zipCode}"/>
                         </tr>
                       </tbody>
