@@ -4,14 +4,14 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class AirHockey {
+public class AirHockeyTable {
 
     @Id
     private int id;
     private String status;
 
 
-    public AirHockey() {
+    public AirHockeyTable() {
     }
 
     public int getId() {
