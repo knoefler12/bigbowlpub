@@ -52,7 +52,7 @@ public class ModelTest {
         assertThat(airHockeyTable.getDescription().equals("desc"));
 
     }
-
+/*
     @Test
     void customerModelTest(){
         Customer customer = new Customer();
@@ -76,7 +76,7 @@ public class ModelTest {
         assertThat(customer.getPhoneNumber().equals("00298421634"));
         assertThat(customer.getStreetNumber().equals("5b"));
     }
-
+*/
     @Test
     void menuModelTest(){
         Menu menu = new Menu();
