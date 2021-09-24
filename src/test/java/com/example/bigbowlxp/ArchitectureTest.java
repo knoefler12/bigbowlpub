@@ -98,5 +98,19 @@ public class ArchitectureTest {
         assertNotNull(template);
     }
 
+   /*  @Test
+    void equipmentArchitectureTest(){
+        assertNotNull(equipmentController);
+
+        EquipmentService equipmentService = equipmentController.getEquipmentService();
+        assertNotNull(equipmentService);
+
+        EquipmentRepo equipmentRepo = equipmentService.getEquipmentRepo();
+        assertNotNull(equipmentRepo);
+
+        JdbcTemplate template = equipmentRepo.getTemplate();
+        assertNotNull(template);
+     }*/
+
 
 }

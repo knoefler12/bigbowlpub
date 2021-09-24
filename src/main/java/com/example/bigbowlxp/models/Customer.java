@@ -7,33 +7,44 @@ import javax.persistence.Id;
 public class Customer {
 
     @Id
-    private int id;
-    private String name;
+    private int customerid;
+    private String firstName;
+    private String lastName;
     private String phoneNumber;
+    private String eMail;
     private String street;
     private String streetNumber;
-    private String city;
-    private String apartment;
+    private String floor;
+    private String thtv;
     private String zipCode;
 
     public Customer() {
     }
 
-    public int getId() {
-        return id;
+    public int getCustomerid() {
+        return customerid;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setCustomerid(int id) {
+        this.customerid = id;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String name) {
+        this.firstName = name;
     }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
 
     public String getPhoneNumber() {
         return phoneNumber;
@@ -41,6 +52,14 @@ public class Customer {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public String geteMail() {
+        return eMail;
+    }
+
+    public void seteMail(String eMail) {
+        this.eMail = eMail;
     }
 
     public String getStreet() {
@@ -59,20 +78,21 @@ public class Customer {
         this.streetNumber = streetNumber;
     }
 
-    public String getCity() {
-        return city;
+
+    public String getFloor() {
+        return floor;
     }
 
-    public void setCity(String city) {
-        this.city = city;
+    public void setFloor(String apartment) {
+        this.floor = apartment;
     }
 
-    public String getApartment() {
-        return apartment;
+    public String getThtv() {
+        return thtv;
     }
 
-    public void setApartment(String apartment) {
-        this.apartment = apartment;
+    public void setThtv(String thtv) {
+        this.thtv = thtv;
     }
 
     public String getZipCode() {
@@ -82,4 +102,5 @@ public class Customer {
     public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
     }
+
 }
