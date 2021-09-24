@@ -12,6 +12,7 @@ public class Menu {
     @Id
     /* Variabler*/
     private int food_id;
+    private String day;
     private String name;
     private double price;
 
@@ -44,5 +45,9 @@ public class Menu {
     public void setPrice(double price) {
         this.price = price;
     }
+
+    public String getDay(){return day;}
+
+    public void setDay(String day){this.day = day;}
 
     }
