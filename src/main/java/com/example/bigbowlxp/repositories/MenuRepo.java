@@ -14,14 +14,18 @@ public class MenuRepo {
 
     private JdbcTemplate jdbcTemplate;
 
-    @Autowired
-    public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
-        this.jdbcTemplate = jdbcTemplate;
-    }
-
     public List<Menu> fetchMenu(){
         String sql = "SELECT * FROM sql4438617.food";
         RowMapper<Menu> menuRowMapper = new BeanPropertyRowMapper<>(Menu.class);
         return jdbcTemplate.query(sql, menuRowMapper);
+    }
+
+    public JdbcTemplate getTemplate() {
+        return jdbcTemplate;
+    }
+
+    @Autowired
+    public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
     }
 }

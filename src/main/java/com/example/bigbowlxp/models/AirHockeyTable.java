@@ -1,19 +1,19 @@
 package com.example.bigbowlxp.models;
 
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class BowlingLane {
+public class AirHockeyTable {
 
     @Id
     private int id;
     private boolean status;
-    private boolean isChildLane;
     private String description;
 
 
-    public BowlingLane() {
+    public AirHockeyTable() {
     }
 
     public int getId() {
@@ -32,21 +32,12 @@ public class BowlingLane {
         this.status = status;
     }
 
-    public boolean isChildLane() {
-        return isChildLane;
-    }
 
-    public void setChildLane(boolean childLane) {
-        isChildLane = childLane;
-    }
-
-    public void description(String s) {
+    public void setDescription(String desc) {
+        this.description = description;
     }
 
     public String getDescription() {
         return description;
-    }
-    public void setDescription() {
-        this.description = description;
     }
 }

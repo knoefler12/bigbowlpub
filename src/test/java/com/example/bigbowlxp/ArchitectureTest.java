@@ -4,7 +4,6 @@ import com.example.bigbowlxp.controllers.AirHockeyController;
 import com.example.bigbowlxp.controllers.BowlingController;
 import com.example.bigbowlxp.controllers.CustomerController;
 import com.example.bigbowlxp.controllers.MenuController;
-import com.example.bigbowlxp.models.AirHockey;
 import com.example.bigbowlxp.repositories.AirHockeyRepo;
 import com.example.bigbowlxp.repositories.BowlingRepo;
 import com.example.bigbowlxp.repositories.CustomerRepo;
@@ -15,7 +14,6 @@ import com.example.bigbowlxp.services.CustomerService;
 import com.example.bigbowlxp.services.MenuService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.jdbc.core.JdbcTemplate;
 
