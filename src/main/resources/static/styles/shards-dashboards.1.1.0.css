@@ -636,26 +636,26 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
 
 .btn-secondary {
   color: #fff;
-  border-color: #5A6169;
-  background-color: #5A6169;
+  border-color: #c4183c;
+  background-color: #c4183c;
   box-shadow: none; }
   .btn-secondary:hover {
     color: #fff;
-    background-color: #4e545b;
-    border-color: #4e545b;
+    background-color: #c4183c;
+    border-color: #c4183c;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05), 0 4px 10px rgba(90, 97, 105, 0.25); }
   .btn-secondary:focus, .btn-secondary.focus {
     box-shadow: 0 0 0 3px rgba(90, 97, 105, 0.15), 0 3px 15px rgba(90, 97, 105, 0.2), 0 2px 5px rgba(0, 0, 0, 0.1); }
   .btn-secondary.disabled, .btn-secondary:disabled {
-    background-color: #5A6169;
-    border-color: #5A6169;
+    background-color: #c4183c;
+    border-color: #c4183c;
     box-shadow: none;
     cursor: not-allowed; }
   .btn-secondary:not(:disabled):not(.disabled):active, .btn-secondary:not(:disabled):not(.disabled).active,
   .show > .btn-secondary.dropdown-toggle {
     color: #fff;
-    background-color: #4e545b;
-    border-color: #42484e;
+    background-color: #c4183c;
+    border-color: #c4183c;
     background-image: none;
     box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125) !important; }
 
