@@ -16,6 +16,10 @@ public class MenuService {
         return menuRepo.fetchMenu();
     }
 
+    public int changeFoodPrice(int price, int id){
+        return menuRepo.changePrice(price, id);
+    }
+
     @Autowired
     public void setMenuRepo(MenuRepo menuRepo) {
         this.menuRepo = menuRepo;
