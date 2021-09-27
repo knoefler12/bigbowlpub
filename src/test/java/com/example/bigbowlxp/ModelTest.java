@@ -1,4 +1,5 @@
 package com.example.bigbowlxp;
+/*
 
 import com.example.bigbowlxp.models.BowlingLane;
 import com.example.bigbowlxp.models.Menu;
@@ -9,7 +10,6 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 @SpringBootTest
 public class ModelTest {
-
 
     @Test
     void bowlingModelTest(){
@@ -74,7 +74,7 @@ public class ModelTest {
         assertThat(customer.getPhoneNumber().equals("00298421634"));
         assertThat(customer.getStreetNumber().equals("5b"));
     }*/
-
+/*
     @Test
     void menuModelTest(){
         Menu menu = new Menu();
@@ -86,7 +86,7 @@ public class ModelTest {
         assertThat(menu.getName().equals("ost"));
         assertThat(menu.getPrice() == 1234.5);
     }
-
+*/
    /* @Test
     void equipmentModelTest(){
         Equipment equipment = new Equipment();
@@ -102,4 +102,3 @@ public class ModelTest {
 
     }*/
 
-}
