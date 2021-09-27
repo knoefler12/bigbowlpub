@@ -113,6 +113,7 @@
                         <th scope="col" class="border-0">AirHockeyTablesID</th>
                         <th scope="col" class="border-0">Status</th>
                         <th scope="col" class="border-0">Description</th>
+                        <button type="button">Select</button>
                       </tr>
                       </thead>
                       <tbody>
@@ -120,6 +121,15 @@
                         <td th:text="${airhockeytables.airHockeyTablesId}"/>
                         <td th:text="${airhockeytables.status}"/>
                         <td th:text="${airhockeytables.description}"/>
+
+                        <a th:href="@{'/airHockeyTables/'+${airHockey.airhockey_id}}">
+                          <button class="btn-airHockeyUpdate" id="btn-airHockeyUpdate">Edit</button>
+                        </a>
+
+                        <a th:href="@{'/deleteEquipment'+${equipment.equipment_id}}">
+                          <button class="btn-deleteEquipment" id="btn-deleteEquipment">Delete</button>
+                        </a>
+                        </td>
                       </tr>
                       </tbody>
                     </table>
