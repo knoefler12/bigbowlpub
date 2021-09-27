@@ -14,7 +14,50 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
 </head>
 <body class="h-100">
-
+<div class="color-switcher animated">
+    <h5>Accent Color</h5>
+    <ul class="accent-colors">
+        <li class="accent-primary active" data-color="primary">
+            <i class="material-icons">check</i>
+        </li>
+        <li class="accent-secondary" data-color="secondary">
+            <i class="material-icons">check</i>
+        </li>
+        <li class="accent-success" data-color="success">
+            <i class="material-icons">check</i>
+        </li>
+        <li class="accent-info" data-color="info">
+            <i class="material-icons">check</i>
+        </li>
+        <li class="accent-warning" data-color="warning">
+            <i class="material-icons">check</i>
+        </li>
+        <li class="accent-danger" data-color="danger">
+            <i class="material-icons">check</i>
+        </li>
+    </ul>
+    <div class="actions mb-4">
+        <a class="mb-2 btn btn-sm btn-primary w-100 d-table mx-auto extra-action" href="https://designrevision.com/downloads/shards-dashboard-lite/">
+            <i class="material-icons">cloud</i> Download</a>
+        <a class="mb-2 btn btn-sm btn-white w-100 d-table mx-auto extra-action" href="https://designrevision.com/docs/shards-dashboard-lite">
+            <i class="material-icons">book</i> Documentation</a>
+    </div>
+    <div class="social-wrapper">
+        <div class="social-actions">
+            <h5 class="my-2">Help us Grow</h5>
+            <div class="inner-wrapper">
+                <a class="github-button" href="https://github.com/DesignRevision/shards-dashboard" data-icon="octicon-star" data-show-count="true" aria-label="Star DesignRevision/shards-dashboard on GitHub">Star</a>
+                <!-- <iframe style="width: 91px; height: 21px;"src="https://yvoschaap.com/producthunt/counter.html#href=https%3A%2F%2Fwww.producthunt.com%2Fr%2Fp%2F112998&layout=wide" width="56" height="65" scrolling="no" frameborder="0" allowtransparency="true"></iframe> -->
+            </div>
+        </div>
+        <div id="social-share" data-url="https://designrevision.com/downloads/shards-dashboard-lite/" data-text="🔥 Check out Shards Dashboard Lite, a free and beautiful Bootstrap 4 admin dashboard template!" data-title="share"></div>
+        <div class="loading-overlay">
+            <div class="spinner"></div>
+        </div>
+    </div>
+    <div class="close">
+        <i class="material-icons">close</i>
+    </div>
 </div>
 
 <div class="container-fluid">
@@ -52,7 +95,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" th:href="@{'/bowlinglanes'}">
+                        <a class="nav-link " th:href="@{'/bowlinglanes'}">
                             <i class="material-icons">note_add</i>
                             <span>Bowling baner</span>
                         </a>
@@ -96,7 +139,7 @@
                     <div class="page-header row no-gutters py-4">
                         <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
                             <span class="text-uppercase page-subtitle"></span>
-                            <h3 class="page-title">Kunder</h3>
+                            <h3 class="page-title">Udstyr</h3>
                         </div>
                     </div>
                     <!-- End Page Header -->
@@ -108,35 +151,16 @@
                                     <h6 class="m-0">Equipment List</h6>
                                 </div>
                                 <div class="card-body p-0 pb-3 text-center">
-                                    <table class="table mb-0">
-                                        <thead class="bg-light">
-                                        <tr>
-                                            <th scope="col" class="border-0">EquipmentID</th>
-                                            <th scope="col" class="border-0">Name</th>
-                                            <th scope="col" class="border-0">Type</th>
-                                            <th scope="col" class="border-0">Amount</th>
-                                            <th scope="col" class="border-0">Options</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr th:each="equipment: ${equipment}">
-                                            <td th:text="${equipment.equipment_id}"/>
-                                            <td th:text="${equipment.name}"/>
-                                            <td th:text="${equipment.type}" />
-                                            <td th:text="${equipment.amount}" />
-                                            <td>
-
-                                                <a th:href="@{'/equipment/'+${equipment.equipment_id}}">
-                                                    <button class="btn-equipmentUpdate" id="btn-equipmentUpdate">Edit</button>
-                                                </a>
-
-                                                <a th:href="@{'/deleteEquipment'+${equipment.equipment_id}}">
-                                                    <button class="btn-deleteEquipment" id="btn-deleteEquipment">Delete</button>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
+                                        <form th:action="@{${equipment.equipment_id}}" method="post">
+                                        <input hidden name="equipment_id" th:value="${equipment.equipment_id}"><br>
+                                        <label>Udstyr</label>
+                                        <input type="text" name="name" th:value="${equipment.name}"><br>
+                                        <label>Type</label>
+                                        <input type="text" name="type" th:value="${equipment.type}"><br>
+                                        <label>Mængde</label>
+                                        <input type="text" name="amount" th:value="${equipment.amount}"><br>
+                                        <input type="submit" value="Opdater">
+                                        </form>
                                 </div>
                             </div>
                         </div>

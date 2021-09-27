@@ -1,4 +1,4 @@
-package com.example.bigbowlxp;
+/* package com.example.bigbowlxp;
 
 import com.example.bigbowlxp.controllers.AirHockeyController;
 import com.example.bigbowlxp.controllers.BowlingController;
@@ -111,6 +111,3 @@ public class ArchitectureTest {
         JdbcTemplate template = equipmentRepo.getTemplate();
         assertNotNull(template);
      }*/
-
-
-}
