@@ -1,9 +1,7 @@
 package com.example.bigbowlxp.repositories;
 
 import com.example.bigbowlxp.models.Equipment;
-import com.example.bigbowlxp.models.Menu;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.batch.BatchProperties;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -22,7 +20,7 @@ public class EquipmentRepo {
     }
 
     public List<Equipment> fetchAllEquipment(){
-        String sql = "SELECT * FROM sql4438617.equipment";
+        String sql = "SELECT * FROM sql4438617.equipment ORDER BY name, type DESC";
         RowMapper<Equipment> equipmentRowMapper = new BeanPropertyRowMapper<>(Equipment.class);
         return jdbcTemplate.query(sql, equipmentRowMapper);
     }
@@ -43,6 +41,11 @@ public class EquipmentRepo {
     public void deleteEquipment(int equipment_id){
         String sql = "DELETE FROM equipment WHERE equipment_id = ?";
         jdbcTemplate.update(sql, equipment_id);
+    }
+
+    public void addEquipment(Equipment e){
+        String sql = "INSERT INTO equipment (name, type, amount) VALUES (?, ?, ?)";
+        jdbcTemplate.update(sql, e.getName(), e.getType(), e.getAmount());
     }
 
 
