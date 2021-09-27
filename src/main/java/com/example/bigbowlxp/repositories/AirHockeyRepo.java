@@ -31,7 +31,7 @@ public class AirHockeyRepo {
 
     public void updateAirHockey(AirHockeyTable a){
         String sql = "UPDATE airhockey_tables SET status = ?, descripton = ? WHERE airhockey_tables_id = ?";
-        jdbcTemplate.update(sql,a.getStatus(),a.getDescription(),a.getAirhockeyTableId());
+        jdbcTemplate.update(sql,a.getStatus(),a.getDescription(),a.getAirhockeyTablesId());
 
     }
     public AirHockeyTable findEquipmentById(int airhockey_id){
@@ -39,5 +39,22 @@ public class AirHockeyRepo {
         RowMapper<AirHockeyTable> rowMapper = new BeanPropertyRowMapper<>(AirHockeyTable.class);
         AirHockeyTable e = jdbcTemplate.queryForObject(sql, rowMapper, airhockey_id);
         return e;
+    }
+
+    public AirHockeyTable findAirhockeyTableById(int airhockeyTableId){
+        String sql = "SELECT * FROM airhockey_tables WHERE airhockey_tables_id = ?";
+        RowMapper<AirHockeyTable> rowMapper = new BeanPropertyRowMapper<>(AirHockeyTable.class);
+        AirHockeyTable airHockeyTable = jdbcTemplate.queryForObject(sql, rowMapper, airhockeyTableId);
+        return airHockeyTable;
+    }
+
+    public Boolean airhockeyTableStatus(int id){
+        String sql = "UPDATE airhockey_tables SET status = NOT status WHERE airhockey_tables_id = ?";
+        return jdbcTemplate.update(sql, id) > 0;
+    }
+
+    public int airhockeyDescription(String description, int id){
+        String sql = "UPDATE airhockey_tables SET description = ? WHERE airhockey_tables_id = ?";
+        return jdbcTemplate.update(sql, description, id);
     }
 }

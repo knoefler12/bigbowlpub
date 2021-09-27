@@ -30,7 +30,6 @@ public class BowlingRepo {
     public int bowlingStatusDesc(String description, int id){
      String sql = "UPDATE bowling_alleys SET description = ? WHERE bowling_alley_id = ?";
      return jdbcTemplate.update(sql, description, id);
-
     }
 
     public JdbcTemplate getTemplate() {

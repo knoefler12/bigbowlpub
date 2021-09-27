@@ -30,7 +30,17 @@ public class AirHockeyService {
     public void updateAirHockey(AirHockeyTable a){
         airHockeyRepo.updateAirHockey(a);
     }
-    public AirHockeyTable findEquipmentById(int airhockey_id){
-        return airHockeyRepo.findEquipmentById(airhockey_id);
+
+
+    public AirHockeyTable findEquipmentById(int airhockeyTableId){
+        return airHockeyRepo.findAirhockeyTableById(airhockeyTableId);
     }
+    public Boolean airhockeyTableStatus(int id){
+        return airHockeyRepo.airhockeyTableStatus(id);
+    }
+
+    public int airhockeyDescription(String description, int id ){
+        return airhockeyDescription(description,id);
+    }
+
 }

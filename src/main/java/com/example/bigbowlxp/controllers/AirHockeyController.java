@@ -32,15 +32,15 @@ public class AirHockeyController {
     }
 
 
-    @GetMapping("/airHockeyTables/{airHockey_id}")
-    public String updateAirhockey(@PathVariable int airHockey_id, Model model){
-        model.addAttribute("airHockey", airHockeyService.findEquipmentById(airHockey_id));
-        return "updateAirhockey";
+    @GetMapping("/airhockeytables/{airhockeyTableId}")
+    public String updatesBowlingStatus(@PathVariable("airhockeyTableId") int airhockeyTableId){
+        airHockeyService.airhockeyTableStatus(airhockeyTableId);
+        return "redirect:/airhockeytables";
     }
-    @PostMapping("airHockeyTables/{airHockey_id}")
-    public String updateAirhockey(@ModelAttribute AirHockeyTable airHockeyTable){
-        airHockeyService.updateAirHockey(airHockeyTable);
 
-        return "airHockeyTables";
+    @PostMapping("/airhockeytables/{airhockeyTableId}")
+    public String bowlingStatusDesc(@PathVariable("airhockeyTableId") int airhockeyTableId, @ModelAttribute String description){
+        airHockeyService.airhockeyDescription(description, airhockeyTableId);
+        return "hockey.html";
     }
 }

@@ -11,7 +11,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 @SpringBootTest
 public class ModelTest {
 /*
-    @Test
+    /*@Test
     void bowlingModelTest(){
         BowlingLane lane = new BowlingLane();
         lane.setId(1);
@@ -37,7 +37,7 @@ public class ModelTest {
 
     }
 /*
-    @Test
+    /*@Test
     void airHockeyModelTest(){
         AirHockeyTable airHockeyTable = new AirHockeyTable();
 
@@ -77,7 +77,7 @@ public class ModelTest {
         assertThat(customer.getStreetNumber().equals("5b"));
     }*/
 /*
-    @Test
+   /* @Test
     void menuModelTest(){
         Menu menu = new Menu();
         menu.setFood_id(1);
