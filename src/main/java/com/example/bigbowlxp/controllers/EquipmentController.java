@@ -49,7 +49,7 @@ public class EquipmentController {
     @PostMapping("equipment/{equipment_id}")
     public String updateEquipment(@ModelAttribute Equipment equipment){
         equipmentService.updateEquipment(equipment);
-        return "equipment";
+        return "redirect:/equipment";
     }
 
     @GetMapping("/deleteEquipment/{equipment_id}")

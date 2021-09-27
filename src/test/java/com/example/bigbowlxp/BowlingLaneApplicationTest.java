@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-/*
+
 @SpringBootTest
 public class BowlingLaneApplicationTest {
 
@@ -26,8 +26,6 @@ public class BowlingLaneApplicationTest {
         assertThat(lanes.get(2).isChildLane());
         assertThat(lanes.get(3).isChildLane());
     }
-
-
-}
 */
 
+}
