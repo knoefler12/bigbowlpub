@@ -1,5 +1,5 @@
 package com.example.bigbowlxp;
-
+/*
 import com.example.bigbowlxp.models.BowlingLane;
 import com.example.bigbowlxp.models.Menu;
 import org.junit.jupiter.api.Test;
@@ -36,7 +36,7 @@ public class ModelTest {
 
 
     }
-/*
+
     @Test
     void airHockeyModelTest(){
         AirHockeyTable airHockeyTable = new AirHockeyTable();
@@ -51,7 +51,7 @@ public class ModelTest {
 
     }
 
-   /* @Test
+   @Test
     void customerModelTest(){
         Customer customer = new Customer();
         customer.setCustomerid(1);
@@ -73,7 +73,7 @@ public class ModelTest {
         assertThat(customer.getStreet().equals("Sverrisgøta"));
         assertThat(customer.getPhoneNumber().equals("00298421634"));
         assertThat(customer.getStreetNumber().equals("5b"));
-    }*/
+    }
 
     @Test
     void menuModelTest(){
@@ -87,7 +87,7 @@ public class ModelTest {
         assertThat(menu.getPrice() == 1234.5);
     }
 
-   /* @Test
+    @Test
     void equipmentModelTest(){
         Equipment equipment = new Equipment();
         equipment.setId(1);
@@ -100,6 +100,8 @@ public class ModelTest {
         assertThat(equipment.getType().equals("størrelse 67"));
         assertThat(equipment.getAmount() == 6);
 
-    }*/
+    }
+
 
 }
+*/
