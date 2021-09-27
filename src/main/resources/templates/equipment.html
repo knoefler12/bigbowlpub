@@ -100,7 +100,7 @@
                             <h3 class="page-title">Udstyr</h3><br>
 
                             <a href="/newEquipment">
-                                <button class="btn-newEquipment" id="btn-newEquipment">Tilføj nyt udstyr</button>
+                                <button class="btn btn-primary" id="btn-newEquipment">Tilføj nyt udstyr</button>
                             </a>
 
                         </div>
@@ -131,11 +131,11 @@
                                             <td>
 
                                                 <a th:href="@{'/equipment/'+${equipment.equipment_id}}">
-                                                    <button class="btn-equipmentUpdate" id="btn-equipmentUpdate">Edit</button>
+                                                    <button class="btn btn-warning" id="btn-equipmentUpdate">Rediger</button>
                                                 </a>
 
                                                 <a th:href="@{'/deleteEquipment/'+${equipment.equipment_id}}">
-                                                    <button class="btn-deleteEquipment" id="btn-deleteEquipment">Delete</button>
+                                                    <button class="btn-secondary" id="btn-deleteEquipment">Slet</button>
                                                 </a>
                                             </td>
                                         </tr>
