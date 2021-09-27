@@ -2,9 +2,6 @@ package com.example.bigbowlxp.models;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.util.List;
 
 @Entity
 public class Menu {
