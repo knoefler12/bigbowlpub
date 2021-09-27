@@ -53,4 +53,5 @@ public class Equipment {
     public void setAmount(int amount) {
         this.amount = amount;
     }
+
 }

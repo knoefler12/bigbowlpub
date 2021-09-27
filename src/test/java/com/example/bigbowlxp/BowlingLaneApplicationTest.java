@@ -16,7 +16,7 @@ public class BowlingLaneApplicationTest {
 
     @Autowired
     BowlingService bowlingService;
-/*
+
     @Test
     void laneListTest(){
         List<BowlingLane> lanes = bowlingService.getLanes();
@@ -26,6 +26,6 @@ public class BowlingLaneApplicationTest {
         assertThat(lanes.get(2).isChildLane());
         assertThat(lanes.get(3).isChildLane());
     }
-*/
+
 
 }
