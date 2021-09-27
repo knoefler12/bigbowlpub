@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Bowling Baner</title>
+    <title>Bowling</title>
     <meta name="description" content="A high-quality &amp; free Bootstrap admin dashboard template pack that comes with lots of templates and components.">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
@@ -61,7 +61,7 @@
               <li class="nav-item">
                 <a class="nav-link " th:href="@{'/mad'}">
                   <i class="material-icons">table_chart</i>
-                  <span>Resturanter</span>
+                  <span>Resturant</span>
                 </a>
               </li>
               <li class="nav-item">
@@ -106,7 +106,7 @@
               <div class="col">
                 <div class="card card-small mb-4">
                   <div class="card-header border-bottom">
-                    <h6 class="m-0">Bowling baner</h6>
+                    <h6 class="m-0">Oversigt over bowlingbaner</h6>
                   </div>
                   <div class="card-body p-0 pb-3 text-center">
                     <table class="table mb-0">
@@ -129,11 +129,11 @@
                         <td th:text="${lane.description}"></td>
                         <td>
                           <a th:href="@{'/statusupdate/'+${lane.id}}">
-                            <button  type="button" class="btn btn-warning">Opdater</button>
+                            <button  type="button" class="btn btn-warning">Rediger</button>
                           </a>
                             <!-- Button trigger modal -->
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                              Tilføj beskrivelse
+                              Note til bane
                             </button>
 
                             <!-- Modal -->
@@ -150,9 +150,9 @@
                                     ...
                                   </div>
                                   <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Luk</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                     <a th:href="@{'/bowlingstatus/'+${lane.id}}">
-                                      <button type="button" class="btn btn-primary">Gem indstillinger</button>
+                                      <button type="button" class="btn btn-primary">Save changes</button>
                                     </a>
                                   </div>
                                 </div>
