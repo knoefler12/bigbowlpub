@@ -35,10 +35,26 @@ public class EquipmentController {
         return "updateEquipment";
     }
 
+    @GetMapping("/newEquipment")
+    public String newEquipment(){
+        return "newEquipment";
+    }
+
+    @PostMapping("/newEquipment")
+    public String newEquipment(@ModelAttribute Equipment equipment){
+        equipmentService.addEquipment(equipment);
+        return "redirect:/equipment";
+    }
+
     @PostMapping("equipment/{equipment_id}")
     public String updateEquipment(@ModelAttribute Equipment equipment){
         equipmentService.updateEquipment(equipment);
         return "equipment";
     }
 
+    @GetMapping("/deleteEquipment/{equipment_id}")
+    public String deleteEquipment(@PathVariable("equipment_id") int equipment_id){
+        equipmentService.deleteEquipment(equipment_id);
+        return "redirect:/equipment";
+    }
 }
