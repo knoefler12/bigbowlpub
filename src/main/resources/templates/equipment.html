@@ -111,14 +111,14 @@
                         <div class="col">
                             <div class="card card-small mb-4">
                                 <div class="card-header border-bottom">
-                                    <h6 class="m-0">Udstyrs Liste</h6>
+                                    <h6 class="m-0">Liste over udstyr</h6>
                                 </div>
                                 <div class="card-body p-0 pb-3 text-center">
                                     <table class="table mb-0">
                                         <thead class="bg-light">
                                         <tr>
                                             <th scope="col" class="border-0">Navn</th>
-                                            <th scope="col" class="border-0">Type</th>
+                                            <th scope="col" class="border-0">Størrelse - eu</th>
                                             <th scope="col" class="border-0">Mængde</th>
                                             <th scope="col" class="border-0">Handlinger</th>
                                         </tr>
@@ -131,11 +131,11 @@
                                             <td>
 
                                                 <a th:href="@{'/equipment/'+${equipment.equipment_id}}">
-                                                    <button class="btn-equipmentUpdate" id="btn-equipmentUpdate">Edit</button>
+                                                    <button class="btn-equipmentUpdate" id="btn-equipmentUpdate">Redigér</button>
                                                 </a>
 
                                                 <a th:href="@{'/deleteEquipment/'+${equipment.equipment_id}}">
-                                                    <button class="btn-deleteEquipment" id="btn-deleteEquipment">Delete</button>
+                                                    <button class="btn-deleteEquipment" id="btn-deleteEquipment" style="background-color: red">Slet</button>
                                                 </a>
                                             </td>
                                         </tr>
