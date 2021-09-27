@@ -30,9 +30,13 @@ public class EquipmentService {
     public Equipment findEquipmentById(int equipment_id){
         return equipmentRepo.findEquipmentById(equipment_id);
     }
+
     public void updateEquipment(Equipment e){
         equipmentRepo.updateEquipment(e);
     }
 
+    public void deleteEquipment(int equipment_id){
+        equipmentRepo.deleteEquipment(equipment_id);
+    }
 
 }

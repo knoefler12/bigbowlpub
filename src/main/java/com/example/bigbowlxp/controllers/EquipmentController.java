@@ -41,4 +41,10 @@ public class EquipmentController {
         return "equipment";
     }
 
+    @GetMapping("/deleteEquipment/{equipment_id}")
+    public String deleteEquipment(@PathVariable("equipment_id") int equipment_id){
+        equipmentService.deleteEquipment(equipment_id);
+        return "redirect:/equipment";
+    }
+
 }

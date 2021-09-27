@@ -40,5 +40,10 @@ public class EquipmentRepo {
 
     }
 
+    public void deleteEquipment(int equipment_id){
+        String sql = "DELETE FROM equipment WHERE equipment_id = ?";
+        jdbcTemplate.update(sql, equipment_id);
+    }
+
 
 }
