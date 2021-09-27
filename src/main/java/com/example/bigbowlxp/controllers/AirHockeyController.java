@@ -24,6 +24,7 @@ public class AirHockeyController {
     public AirHockeyService getAirHockeyService() {
         return airHockeyService;
     }
+
     @GetMapping("/airhockeytables")
     public String fetchAirHockeyTables(Model model){
         model.addAttribute("airhockeytables", airHockeyService.fetchAirHockeyTable());

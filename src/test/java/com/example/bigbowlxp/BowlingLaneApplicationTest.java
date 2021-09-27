@@ -26,8 +26,8 @@ public class BowlingLaneApplicationTest {
         assertThat(lanes.get(2).isChildLane());
         assertThat(lanes.get(3).isChildLane());
     }
-*/
-}
+
 
 }
 */
+

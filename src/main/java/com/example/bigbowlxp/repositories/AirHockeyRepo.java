@@ -1,8 +1,6 @@
 package com.example.bigbowlxp.repositories;
 
 import com.example.bigbowlxp.models.AirHockeyTable;
-import com.example.bigbowlxp.models.Customer;
-import com.example.bigbowlxp.models.Equipment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -33,7 +31,7 @@ public class AirHockeyRepo {
 
     public void updateAirHockey(AirHockeyTable a){
         String sql = "UPDATE airhockey_tables SET status = ?, descripton = ? WHERE airhockey_tables_id = ?";
-        jdbcTemplate.update(sql,a.getStatus(),a.getDescription(),a.getAirHockeyTablesId());
+        jdbcTemplate.update(sql,a.getStatus(),a.getDescription(),a.getAirhockeyTableId());
 
     }
     public AirHockeyTable findEquipmentById(int airhockey_id){
