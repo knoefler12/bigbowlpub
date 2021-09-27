@@ -8,7 +8,7 @@ import javax.persistence.Id;
 public class AirHockeyTable {
 
     @Id
-    private int airHockeyTablesId;
+    private int airhockeyTableId;
     private boolean status;
     private String description;
 
@@ -16,12 +16,12 @@ public class AirHockeyTable {
     public AirHockeyTable() {
     }
 
-    public int getAirHockeyTablesId() {
-        return airHockeyTablesId;
+    public int getAirhockeyTableId() {
+        return airhockeyTableId;
     }
 
-    public void setAirHockeyTablesId(int id) {
-        this.airHockeyTablesId = id;
+    public void setAirhockeyTableId(int id) {
+        this.airhockeyTableId = id;
     }
 
     public boolean getStatus() {

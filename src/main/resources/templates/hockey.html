@@ -113,22 +113,25 @@
                         <th scope="col" class="border-0">Bane nummer</th>
                         <th scope="col" class="border-0">Status</th>
                         <th scope="col" class="border-0">Beskrivelse</th>
+                        <th scope="col" class="border-0">Handlinger</th>
                         <button type="button">Select</button>
                       </tr>
                       </thead>
                       <tbody>
-                      <tr th:each="airhockeytables: ${airhockeytables}">
-                        <td th:text="${airhockeytables.airHockeyTablesId}"/>
-                        <td th:text="${airhockeytables.status}"/>
-                        <td th:text="${airhockeytables.description}"/>
+                      <tr th:each="airhockeytable: ${airhockeytables}">
+                        <td th:text="${airhockeytable.airhockeyTableId}"/>
+                        <td th:text="${airhockeytable.status}"/>
+                        <td th:text="${airhockeytable.description}"/>
 
-                        <a th:href="@{'/airHockeyTables/'+${airHockey.airhockey_id}}">
+                        <td>
+
+                        <a th:href="@{'/airHockeyTables/'+${airhockeytable.airhockeyTableId}}">
                           <button class="btn-airHockeyUpdate" id="btn-airHockeyUpdate">Edit</button>
                         </a>
 
-                        <a th:href="@{'/deleteEquipment'+${equipment.equipment_id}}">
+                        <!--<a th:href="@{'/deleteEquipment'+${equipment.equipment_id}}">
                           <button class="btn-deleteEquipment" id="btn-deleteEquipment">Delete</button>
-                        </a>
+                        </a>-->
                         </td>
                       </tr>
                       </tbody>
