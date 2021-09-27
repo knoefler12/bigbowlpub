@@ -110,18 +110,20 @@
                     <table class="table mb-0">
                       <thead class="bg-light">
                         <tr>
-                          <th scope="col" class="border-0">#</th>
-                          <th scope="col" class="border-0">Child Lane</th>
+                          <th scope="col" class="border-0">Bane nummer</th>
+                          <th scope="col" class="border-0">Børne Bane</th>
                           <th scope="col" class="border-0">Status</th>
-                          <th scope="col" class="border-0">Description</th>
-                          <th scope="col" class="border-0">Actions</th>
+                          <th scope="col" class="border-0">Beskrivelse</th>
+                          <th scope="col" class="border-0">Handlinger</th>
                         </tr>
                       </thead>
                       <tbody>
                       <tr th:each="lane : ${bowlingLanes}">
                         <td th:text="${lane.id}"></td>
-                        <td th:text="${lane.isChildLane}"></td>
-                        <td th:text="${lane.status}"></td>
+                        <td th:if="${lane.isChildLane}">Ja</td>
+                        <td th:if="${!lane.isChildLane}">Nej</td>
+                        <td th:if="${lane.status}">Klar</td>
+                        <td th:if="${!lane.status}">Ude af drift</td>
                         <td th:text="${lane.description}"></td>
                         <td>
                           <a th:href="@{'/statusupdate/'+${lane.id}}">
