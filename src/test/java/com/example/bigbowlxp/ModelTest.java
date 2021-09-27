@@ -43,11 +43,11 @@ public class ModelTest {
     void airHockeyModelTest(){
         AirHockeyTable airHockeyTable = new AirHockeyTable();
 
-        airHockeyTable.setId(1);
+        airHockeyTable.setAirHockeyTablesId(1);
         airHockeyTable.setStatus(true);
         airHockeyTable.setDescription("desc");
 
-        assertThat(airHockeyTable.getId() == 1);
+        assertThat(airHockeyTable.getAirHockeyTablesId() == 1);
         assertThat(airHockeyTable.getStatus() == true);
         assertThat(airHockeyTable.getDescription().equals("desc"));
 
