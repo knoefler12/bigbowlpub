@@ -31,7 +31,7 @@ public class AirHockeyRepo {
 
     public void updateAirHockey(AirHockeyTable a){
         String sql = "UPDATE airhockey_tables SET status = ?, descripton = ? WHERE airhockey_tables_id = ?";
-        jdbcTemplate.update(sql,a.getStatus(),a.getDescription(),a.getAirhockeyTablesId());
+        jdbcTemplate.update(sql,a.getStatus(),a.getDescription(),a.getAirhockeyTableId());
 
     }
     public AirHockeyTable findEquipmentById(int airhockey_id){

@@ -12,6 +12,7 @@ public class Customer {
     private String lastName;
     private String phone;
     private String eMail;
+    private String city;
     private String streetAddress;
     private String streetNumber;
     private String floor;
@@ -103,4 +104,11 @@ public class Customer {
         this.zipCode = zipCode;
     }
 
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public Object getCity() {
+        return city;
+    }
 }

@@ -1,17 +1,8 @@
-/* package com.example.bigbowlxp;
+package com.example.bigbowlxp;
 
-import com.example.bigbowlxp.controllers.AirHockeyController;
-import com.example.bigbowlxp.controllers.BowlingController;
-import com.example.bigbowlxp.controllers.CustomerController;
-import com.example.bigbowlxp.controllers.MenuController;
-import com.example.bigbowlxp.repositories.AirHockeyRepo;
-import com.example.bigbowlxp.repositories.BowlingRepo;
-import com.example.bigbowlxp.repositories.CustomerRepo;
-import com.example.bigbowlxp.repositories.MenuRepo;
-import com.example.bigbowlxp.services.AirHockeyService;
-import com.example.bigbowlxp.services.BowlingService;
-import com.example.bigbowlxp.services.CustomerService;
-import com.example.bigbowlxp.services.MenuService;
+import com.example.bigbowlxp.controllers.*;
+import com.example.bigbowlxp.repositories.*;
+import com.example.bigbowlxp.services.*;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -37,9 +28,12 @@ public class ArchitectureTest {
     @Autowired
     private MenuController menuController;
 
+    @Autowired
+    private EquipmentController equipmentController;
+
 
     @Test
-    void bowlingArchitectureTest(){
+    void bowlingArchitectureTest() {
 
         assertThat(bowlingController).isNotNull();
         BowlingService bowlingService = bowlingController.getBowlingService();
@@ -55,7 +49,7 @@ public class ArchitectureTest {
     }
 
     @Test
-    void airHockeyArchitectureTest(){
+    void airHockeyArchitectureTest() {
         assertNotNull(airHockeyController);
 
         AirHockeyService airHockeyService = airHockeyController.getAirHockeyService();
@@ -70,7 +64,7 @@ public class ArchitectureTest {
     }
 
     @Test
-    void customerArchitectureTest(){
+    void customerArchitectureTest() {
         assertNotNull(customerController);
 
         CustomerService customerService = customerController.getCustomerService();
@@ -85,7 +79,7 @@ public class ArchitectureTest {
     }
 
     @Test
-    void menuArchitectureTest(){
+    void menuArchitectureTest() {
         assertNotNull(menuController);
 
         MenuService menuService = menuController.getMenuService();
@@ -98,8 +92,8 @@ public class ArchitectureTest {
         assertNotNull(template);
     }
 
-   /*  @Test
-    void equipmentArchitectureTest(){
+    @Test
+    void equipmentArchitectureTest() {
         assertNotNull(equipmentController);
 
         EquipmentService equipmentService = equipmentController.getEquipmentService();
@@ -110,4 +104,5 @@ public class ArchitectureTest {
 
         JdbcTemplate template = equipmentRepo.getTemplate();
         assertNotNull(template);
-     }*/
+    }
+}

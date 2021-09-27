@@ -49,4 +49,7 @@ public class EquipmentRepo {
     }
 
 
+    public JdbcTemplate getTemplate() {
+        return jdbcTemplate;
+    }
 }
