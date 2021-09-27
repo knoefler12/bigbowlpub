@@ -36,7 +36,7 @@ public class BowlingLane {
         return isChildLane;
     }
 
-    public void setChildLane(boolean childLane) {
+    public void setIsChildLane(boolean childLane) {
         isChildLane = childLane;
     }
 

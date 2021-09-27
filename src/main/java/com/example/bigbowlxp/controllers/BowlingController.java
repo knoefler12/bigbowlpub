@@ -15,6 +15,7 @@ public class BowlingController {
     @GetMapping("/bowlinglanes")
     public String getLanes(Model model) {
         model.addAttribute("bowlingLanes", bowlingService.getLanes());
+        System.out.println(bowlingService.getLanes().get(0).isChildLane());
         return "bowling.html";
     }
 
