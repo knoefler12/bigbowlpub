@@ -20,7 +20,7 @@ public class EquipmentRepo {
     }
 
     public List<Equipment> fetchAllEquipment(){
-        String sql = "SELECT * FROM sql4438617.equipment ORDER BY name, type DESC";
+        String sql = "SELECT * FROM sql4438617.equipment ORDER BY name, type";
         RowMapper<Equipment> equipmentRowMapper = new BeanPropertyRowMapper<>(Equipment.class);
         return jdbcTemplate.query(sql, equipmentRowMapper);
     }
