@@ -145,7 +145,7 @@
                                     <h6 class="m-0">Equipment List</h6>
                                 </div>
                                 <div class="card-body p-0 pb-3 text-center">
-                                        <form th:action="@{'/'+${equipment.equipment_id}}" method="post">
+                                        <form th:action="@{${equipment.equipment_id}}" method="post">
                                         <input hidden name="equipment_id" th:value="${equipment.equipment_id}"><br>
                                         <label>Udstyr</label>
                                         <input type="text" name="name" th:value="${equipment.name}"><br>
