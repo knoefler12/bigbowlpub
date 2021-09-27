@@ -51,6 +51,8 @@ public class ModelTest {
 
     }
 
+ */
+
    /* @Test
     void customerModelTest(){
         Customer customer = new Customer();
