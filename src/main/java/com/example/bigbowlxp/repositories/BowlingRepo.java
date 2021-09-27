@@ -22,6 +22,17 @@ public class BowlingRepo {
         return jdbcTemplate.query(sql, rowMapper);
     }
 
+    public Boolean bowlingLaneStatus(int id){
+        String sql = "UPDATE bowling_alleys SET status = NOT status WHERE bowling_alley_id = ?";
+        return jdbcTemplate.update(sql, id) > 0;
+    }
+
+    public int bowlingStatusDesc(String description, int id){
+     String sql = "UPDATE bowling_alleys SET description = ? WHERE bowling_alley_id = ?";
+     return jdbcTemplate.update(sql, description, id);
+
+    }
+
     public JdbcTemplate getTemplate() {
         return jdbcTemplate;
     }
