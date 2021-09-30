@@ -26,6 +26,6 @@ public void createBooking(Booking b){
     }
 
     public void fetchBookingById(int id){
-        bookingRepo.fetchBookingById(id);
+        //bookingRepo.fetchBookingById(id);
     }
 }

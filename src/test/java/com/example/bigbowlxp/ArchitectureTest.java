@@ -31,6 +31,9 @@ public class ArchitectureTest {
     @Autowired
     private EquipmentController equipmentController;
 
+    @Autowired
+    private BookingController bookingController;
+
 
     @Test
     void bowlingArchitectureTest() {
@@ -104,5 +107,19 @@ public class ArchitectureTest {
 
         JdbcTemplate template = equipmentRepo.getTemplate();
         assertNotNull(template);
+    }
+
+    @Test
+    void bookingArchitectureTest(){
+        assertNotNull(bookingController);
+
+        BookingService bookingService = bookingController.getBookingService();
+        assertNotNull(bookingService);
+
+        /*BookingRepo bookingRepo = bookingService.getBookingRepo();
+        assertNotNull(bookingRepo);
+
+        JdbcTemplate template = bookingRepo.getTemplate();
+        assertNotNull(template);*/
     }
 }
