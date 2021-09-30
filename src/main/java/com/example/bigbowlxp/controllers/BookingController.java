@@ -32,15 +32,15 @@ public class BookingController {
 
     @GetMapping("/bookings")
     public String getAllBookings(Model model){
-        List<Booking> bookingList = bookingService.fetchAllBookings();
-        model.addAttribute("bookings", bookingList);
+       // List<Booking> bookingList = bookingService.fetchAllBookings();
+        //model.addAttribute("bookings", bookingList);
         return "bookings";
     }
 
     @GetMapping("/bookings/{activity}")
     public String fetchBookingByActivity(@PathVariable String activity, Model model){
-        Booking booking = bookingService.fetchBookingByActivity(activity);
-        model.addAttribute("booking", booking);
+        //Booking booking = bookingService.fetchBookingByActivity(activity);
+        //model.addAttribute("booking", booking);
         return "booking";
     }
 
