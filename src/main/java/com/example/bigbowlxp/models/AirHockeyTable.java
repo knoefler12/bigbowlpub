@@ -12,7 +12,6 @@ public class AirHockeyTable {
     private boolean status;
     private String description;
 
-
     public AirHockeyTable() {
     }
 
@@ -31,7 +30,6 @@ public class AirHockeyTable {
     public void setStatus(boolean status) {
         this.status = status;
     }
-
 
     public void setDescription(String description) {
         this.description = description;
