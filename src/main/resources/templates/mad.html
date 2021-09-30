@@ -118,7 +118,7 @@
                         <tr th:each="Menu: ${Menu}">
                           <td th:text ="${Menu.day}"></td>
                           <td th:text ="${Menu.name}"></td>
-                          <td th:text ="${Menu.price}"></td>
+                          <td th:text ="${Menu.price} + ' kr.'"></td>
                         </tr>
                       </tbody>
                     </table>
