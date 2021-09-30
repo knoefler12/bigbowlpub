@@ -128,7 +128,7 @@
                             <button type="button" class="btn btn-primary" data-toggle="modal"
                                     th:attr="data-target=${'#exampleModal' + Menu.food_id}"
                                     data-row="${Menu}">
-                              Forklaring
+                              Ny pris
                             </button>
 
                           </td>
@@ -160,8 +160,7 @@
                       <div class="modal-body">
                         <div class="form-group">
                           <label for="price"
-                                 class="col-form-label">Forklaring
-                            af nedlukning:</label>
+                                 class="col-form-label">Ny pris:</label>
                           <input type="text" class="form-control"
                                  id="price" name="price"/>
                         </div>
@@ -171,7 +170,7 @@
                                 data-dismiss="modal">Close
                         </button>
                         <input type="submit" class="btn btn-primary"
-                               value="Gem forklaring"/>
+                               value="Gem ny pris"/>
                       </div>
                     </form>
                   </div>
