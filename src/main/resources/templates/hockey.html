@@ -122,9 +122,10 @@
                       </thead>
                       <tbody>
                       <tr th:each="airhockeytables: ${airhockeytables}">
-                        <td th:text="${airhockeytables.airhockeyTablesId}"/>
-                        <td th:text="${airhockeytables.status}"/>
-                        <td th:text="${airhockeytables.description}"/>
+                        <td th:text="${airhockeytables.airhockeyTablesId}"></td>
+                        <td th:if="${airhockeytables.status}">Klar</td>
+                        <td th:if="${!airhockeytables.status}">Lukket</td>
+                        <td th:text="${airhockeytables.description}"></td>
 
                         <td>
                           <a th:href="@{'/airhockeytables/'+${airhockeytables.airhockeyTablesId}}">
