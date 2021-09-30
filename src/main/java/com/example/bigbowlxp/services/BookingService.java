@@ -26,7 +26,7 @@ public void createBooking(Booking b){
     bookingRepo.deleteJoinedBookings(id);
     }
 
-    public void fetchBookingById(int id){
-        bookingRepo.fetchBookingById(id);
+    public List<Booking> fetchBookingById(String activity){
+        return bookingRepo.fetchBookingByActivity(activity);
     }
 }
