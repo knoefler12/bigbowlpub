@@ -32,13 +32,14 @@ public class AirHockeyController {
     }
 
 
-    @GetMapping("/airhockeytables/{airhockeyTableId}")
-    public String updatesBowlingStatus(@PathVariable("airhockeyTableId") int airhockeyTableId){
-        airHockeyService.airhockeyTableStatus(airhockeyTableId);
+    @GetMapping("/updateAirStatus/{id}")
+    public String updatesAirHockeyTables(@PathVariable("id") int id){
+        System.out.println(id);
+        airHockeyService.airhockeyTableStatus(id);
         return "redirect:/airhockeytables";
     }
 
-    @PostMapping("/airhockeytables/{airhockeyTableId}")
+    @PostMapping("/airStatusDesc/{airhockeyTableId}")
     public String bowlingStatusDesc(@PathVariable("airhockeyTableId") int airhockeyTableId, @ModelAttribute String description){
         airHockeyService.airhockeyDescription(description, airhockeyTableId);
         return "hockey.html";
