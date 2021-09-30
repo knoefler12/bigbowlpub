@@ -141,13 +141,12 @@
                                                             data-row="${lane}    ">
                                                         Forklaring
                                                     </button>
-                                                    <div th:if="${lane.booked}">
-                                                        <button type="button" class="btn btn-primary" data-toggle="modal"
+
+                                                        <button  th:if="${lane.booked}" type="button" class="btn btn-primary" data-toggle="modal"
                                                                 th:attr="data-target=${'#exampleModal' + lane.id}"
                                                                 data-row="${lane}    ">
                                                             Info
                                                         </button>
-                                                    </div>
                                             </td>
                                         </tr>
                                         </tbody>

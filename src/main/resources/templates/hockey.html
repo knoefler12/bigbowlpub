@@ -137,13 +137,12 @@
                           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                             Forklaring
                           </button>
-                          <div th:if="${airhockeytables.booked}">
-                            <button type="button" class="btn btn-primary" data-toggle="modal"
+
+                            <button th:if="${airhockeytables.booked}" type="button" class="btn btn-primary" data-toggle="modal"
                                     th:attr="data-target=${'#exampleModal' + airhockeytables.airhockeyTablesId}"
                                     data-row="${airhockeytables}    ">
                               Info
                             </button>
-                          </div>
 
                           <!-- Modal -->
                           <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
