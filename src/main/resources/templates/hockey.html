@@ -117,6 +117,7 @@
                         <th scope="col" class="border-0">Bane nummer</th>
                         <th scope="col" class="border-0">Status</th>
                         <th scope="col" class="border-0">Beskrivelse</th>
+                        <th scope="col" class="border-0">Booking</th>
                         <th scope="col" class="border-0">Handlinger</th>
                       </tr>
                       </thead>
@@ -126,6 +127,8 @@
                         <td th:if="${airhockeytables.status}">Klar</td>
                         <td th:if="${!airhockeytables.status}">Lukket</td>
                         <td th:text="${airhockeytables.description}"></td>
+                        <td th:if="${!airhockeytables.booked}">Ledig</td>
+                        <td th:if="${airhockeytables.booked}">Optaget</td>
 
                         <td>
                           <a th:href="@{'/updateAirStatus/'+${airhockeytables.airhockeyTablesId}}">
@@ -136,6 +139,11 @@
                                   th:attr="data-target=${'#exampleModal' + airhockeytables.airhockeyTablesId}"
                                   data-row="${airhockeyTablesId}">
                             Forklaring
+                          </button>
+                          <button th:if="${airhockeytables.booked}" type="button" class="btn btn-primary" data-toggle="modal"
+                                  th:attr="data-target=${'#exampleModal' + airhockeytables.airhockeyTablesId}"
+                                  data-row="${airhockeytables}    ">
+                            Info
                           </button>
 
                         <!--<a th:href="@{'/deleteEquipment'+${equipment.equipment_id}}">
