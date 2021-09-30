@@ -133,10 +133,10 @@
                                             <td th:if="${lane.booked}">Optaget</td>
                                             <td>
                                                 <a th:href="@{'/statusupdate/'+${lane.id}}">
-                                                    <button class="btn-update" id="btn-update">Rediger</button>
+                                                    <button class="btn-warning" id="btn-warning">Rediger</button>
                                                     <a/>
 
-                                                    <button type="button" class="btn btn-primary" data-toggle="modal"
+                                                    <button type="button" class="btn-primary" data-toggle="modal"
                                                             th:attr="data-target=${'#exampleModal' + lane.id}"
                                                             data-row="${lane}    ">
                                                         Forklaring
