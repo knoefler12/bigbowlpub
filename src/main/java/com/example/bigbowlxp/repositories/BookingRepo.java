@@ -1,11 +1,16 @@
 package com.example.bigbowlxp.repositories;
 
 import com.example.bigbowlxp.models.Booking;
+import com.example.bigbowlxp.models.BowlingLane;
+import com.example.bigbowlxp.models.Menu;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Repository
 public class BookingRepo{
@@ -36,9 +41,13 @@ public void deleteJoinedBookings(int id){
         jdbcTemplate.update(sql, id);
 }
 
-public ArrayList<Booking> bowlingBooking(){
-        ArrayList<Booking> listOfBowlingBooking = new ArrayList<>();
-        String sql = ""
+public List<Booking> fetchBookingByActivity(String activity){
+
+        String sql = "SELECT * FROM bookings WHERE activity = ?";
+        RowMapper<Booking> rowMapper = new BeanPropertyRowMapper<>(Booking.class);
+
+        return jdbcTemplate.query(sql,rowMapper,activity);
 }
+
 
 }
