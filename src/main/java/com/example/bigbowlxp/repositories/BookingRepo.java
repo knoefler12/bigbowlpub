@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
+
 @Repository
 public class BookingRepo{
 private JdbcTemplate jdbcTemplate;
@@ -32,6 +34,11 @@ private JdbcTemplate jdbcTemplate;
 public void deleteJoinedBookings(int id){
         String sql = "DELETE FROM bookings_unit WHERE booking_id = ?";
         jdbcTemplate.update(sql, id);
+}
+
+public ArrayList<Booking> bowlingBooking(){
+        ArrayList<Booking> listOfBowlingBooking = new ArrayList<>();
+        String sql = ""
 }
 
 }
