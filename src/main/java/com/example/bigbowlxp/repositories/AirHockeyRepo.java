@@ -53,8 +53,9 @@ public class AirHockeyRepo {
         return jdbcTemplate.update(sql, id) > 0;
     }
 
-    public int airhockeyDescription(String description, int id){
+    public void airhockeyDescription(AirHockeyTable airHockeyTable, int id){
         String sql = "UPDATE airhockey_tables SET description = ? WHERE airhockey_tables_id = ?";
-        return jdbcTemplate.update(sql, description, id);
+        String description = airHockeyTable.getDescription();
+        jdbcTemplate.update(sql, description, id);
     }
 }

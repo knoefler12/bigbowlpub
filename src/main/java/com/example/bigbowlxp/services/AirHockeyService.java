@@ -39,8 +39,7 @@ public class AirHockeyService {
         return airHockeyRepo.airhockeyTableStatus(id);
     }
 
-    public int airhockeyDescription(String description, int id ){
-        return airhockeyDescription(description,id);
+    public void airhockeyDescription(AirHockeyTable airHockeyTable, int id ) {
+        airHockeyRepo.airhockeyDescription(airHockeyTable, id);
     }
-
 }

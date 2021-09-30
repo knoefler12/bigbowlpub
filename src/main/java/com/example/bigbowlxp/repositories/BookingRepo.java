@@ -22,8 +22,8 @@ private JdbcTemplate jdbcTemplate;
     }
     public void createBooking(Booking b ){
 
-        String sql = "INSERT INTO bookings(customerId, firstName, lastName, phone, activity, date, startTime, duration) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        jdbcTemplate.update(sql, b.getCustomerId(), b.getFirstName(), b.getLastName(), b.getPhone(), b.getActivity(), b.getDate(), b.getStartTime(), b.getDuration());
+        String sql = "INSERT INTO bookings(customerId, activity, date, startTime, duration) VALUES (?, ?, ?, ?, ?)";
+        jdbcTemplate.update(sql, b.getCustomerId(), b.getActivity(), b.getDate(), b.getStartTime(), b.getDuration());
 
 }
     public void deleteBooking(int id){
