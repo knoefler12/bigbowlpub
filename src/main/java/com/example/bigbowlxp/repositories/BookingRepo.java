@@ -41,6 +41,10 @@ public void deleteJoinedBookings(int id){
         jdbcTemplate.update(sql, id);
 }
 
+public ArrayList<Booking> bowlingBooking(){
+        ArrayList<Booking> listOfBowlingBooking = new ArrayList<>();
+        String sql = "";
+        return null;
 public List<Booking> fetchBookingByActivity(String activity){
 
         String sql = "SELECT * FROM bookings WHERE activity = ?";

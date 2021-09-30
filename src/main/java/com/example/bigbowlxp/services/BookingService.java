@@ -4,8 +4,7 @@ import com.example.bigbowlxp.models.Booking;
 import com.example.bigbowlxp.repositories.BookingRepo;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
+@Service
 public class BookingService {
 BookingRepo bookingRepo = new BookingRepo();
 

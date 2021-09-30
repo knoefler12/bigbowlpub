@@ -16,8 +16,16 @@ import java.util.List;
 @Controller
 public class BookingController {
 
-    @Autowired
     BookingService bookingService;
+
+    public BookingService getBookingService() {
+        return bookingService;
+    }
+
+    @Autowired
+    public void setBookingService(BookingService bookingService) {
+        this.bookingService = bookingService;
+    }
 
     @Autowired
     CustomerService customerService;
@@ -29,9 +37,9 @@ public class BookingController {
         return "bookings";
     }
 
-    @GetMapping("/bookings/{id}")
-    public String fetchBookingById(@PathVariable int id, Model model){
-        Booking booking = bookingService.fetchBookingById(id);
+    @GetMapping("/bookings/{activity}")
+    public String fetchBookingByActivity(@PathVariable String activity, Model model){
+        Booking booking = bookingService.fetchBookingByActivity(activity);
         model.addAttribute("booking", booking);
         return "booking";
     }
@@ -47,12 +55,12 @@ public class BookingController {
         bookingService.createBooking(booking);
         return "redirect:/bookings";
     }
-
+/*
     @GetMapping("/deleteBooking/{id}")
     public String deleteBooking(@PathVariable int id){
         bookingService.deleteBooking(id);
         bookingService.deleteJoinedBooking(id);
         return
-    }
+    }*/
 
 }
