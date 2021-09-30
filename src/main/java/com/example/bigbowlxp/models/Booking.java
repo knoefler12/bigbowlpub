@@ -2,9 +2,10 @@ package com.example.bigbowlxp.models;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
-@Entity
 public class Booking {
 
     @Id
@@ -17,9 +18,18 @@ public class Booking {
     private Date date;
     private String startTime;
     private int duration;
+    private ArrayList<Integer> bookingUnits;
 
     public int getBookingId() {
         return bookingId;
+    }
+
+    public ArrayList<Integer> getBookingUnits() {
+        return bookingUnits;
+    }
+
+    public void setBookingUnits(ArrayList<Integer> bookingUnits) {
+        this.bookingUnits = bookingUnits;
     }
 
     public void setBookingId(int bookingId) {
