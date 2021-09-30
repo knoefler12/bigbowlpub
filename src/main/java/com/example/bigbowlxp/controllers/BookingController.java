@@ -55,12 +55,12 @@ public class BookingController {
         bookingService.createBooking(booking);
         return "redirect:/bookings";
     }
-/*
+
     @GetMapping("/deleteBooking/{id}")
     public String deleteBooking(@PathVariable int id){
         bookingService.deleteBooking(id);
         bookingService.deleteJoinedBooking(id);
-        return
-    }*/
+        return "redirect:/bookings";
+    }
 
 }
