@@ -2,6 +2,7 @@ package com.example.bigbowlxp.services;
 
 import com.example.bigbowlxp.models.Booking;
 import com.example.bigbowlxp.repositories.BookingRepo;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -15,6 +16,7 @@ public void createBooking(Booking b){
 
     }
 
+
     public void deleteBooking(int id){
 
     bookingRepo.deleteBooking(id);
@@ -23,9 +25,8 @@ public void createBooking(Booking b){
     public void deleteJoinedBooking(int id){
     bookingRepo.deleteJoinedBookings(id);
     }
-    public List<Booking> fetchBookingByActivity(String activity){
-    return bookingRepo.fetchBookingByActivity(activity);
+
+    public void fetchBookingById(int id){
+        bookingRepo.fetchBookingById(id);
     }
-
-
 }
