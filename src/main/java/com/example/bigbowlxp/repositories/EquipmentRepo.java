@@ -14,11 +14,6 @@ public class EquipmentRepo {
 
     private JdbcTemplate jdbcTemplate;
 
-    @Autowired
-    public void setJdbcTemplate(JdbcTemplate jdbcTemplate){
-        this.jdbcTemplate = jdbcTemplate;
-    }
-
     public List<Equipment> fetchAllEquipment(){
         String sql = "SELECT * FROM sql4438617.equipment ORDER BY name, type";
         RowMapper<Equipment> equipmentRowMapper = new BeanPropertyRowMapper<>(Equipment.class);
@@ -48,8 +43,13 @@ public class EquipmentRepo {
         jdbcTemplate.update(sql, e.getName(), e.getType(), e.getAmount());
     }
 
+    @Autowired
+    public void setJdbcTemplate(JdbcTemplate jdbcTemplate){
+        this.jdbcTemplate = jdbcTemplate;
+    }
 
     public JdbcTemplate getTemplate() {
         return jdbcTemplate;
     }
+
 }
