@@ -15,6 +15,8 @@
   </head>
   <body class="h-100">
 
+
+
     
     <div class="container-fluid">
       <div class="row">
@@ -88,7 +90,7 @@
         </aside>
         <!-- End Main Sidebar -->
         <main class="main-content col-lg-10 col-md-9 col-sm-12 p-0 offset-lg-2 offset-md-3">
-          <div class="main-navbar sticky-top bg-white">
+          <div class="main-navbar bg-white">
             <!-- Main Navbar -->
          
           <!-- / .main-navbar -->
@@ -129,39 +131,38 @@
                         <td th:text="${lane.description}"></td>
                         <td>
                           <a th:href="@{'/statusupdate/'+${lane.id}}">
-                            <button  type="button" class="btn btn-warning">Rediger</button>
-                          </a>
-                            <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                              Note til bane
-                            </button>
+                            <button class="btn-update" id="btn-update">Rediger</button>
+                            <a/>
 
-                            <!-- Modal -->
-                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                              <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                  <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Opdater status</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                      <span aria-hidden="true">&times;</span>
-                                    </button>
-                                  </div>
-                                  <div class="modal-body">
-                                    ...
-                                  </div>
-                                  <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <a th:href="@{'/bowlingstatus/'+${lane.id}}">
-                                      <button type="button" class="btn btn-primary">Save changes</button>
-                                    </a>
+                              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                Forklaring
+                              </button>
+                              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h5 class="modal-title" id="exampleModalLabel">Forklaring</h5>
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                      </button>
+                                    </div>
+                                    <form th:action="@{'/bowlingstatus/'+${lane.id}}" method="post">
+                                    <div class="modal-body">
+                                        <div class="form-group">
+                                          <label for="description" class="col-form-label">Forklaring af nedlukning:</label>
+                                          <input type="text" class="form-control" id="description" name="description"/>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                      <input type="submit" class="btn btn-primary" value="Gem forklaring"/>
+                                    </div>
+                                    </form>
                                   </div>
                                 </div>
                               </div>
-                            </div>
                         </td>
                       </tr>
-
-
                       </tbody>
                     </table>
                   </div>
@@ -169,7 +170,6 @@
               </div>
             </div>
             <!-- End Default Light Table -->
-
           </div>
           </div>
         </main>

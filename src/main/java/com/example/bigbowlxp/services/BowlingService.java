@@ -23,8 +23,8 @@ public class BowlingService {
         return bowlingRepo.bowlingLaneStatus(id);
     }
 
-    public int bowlingStatusDesc(String description, int id ){
-        return bowlingRepo.bowlingStatusDesc(description, id);
+    public void bowlingStatusDesc(BowlingLane bowlingLane, int id ){
+        bowlingRepo.bowlingStatusDesc(bowlingLane, id);
     }
 
 
