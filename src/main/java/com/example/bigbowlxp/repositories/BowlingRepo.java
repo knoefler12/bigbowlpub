@@ -17,7 +17,7 @@ public class BowlingRepo {
 
     public List<BowlingLane> fetchAllBowlingLanes() {
         String sql = "SELECT bowling_alley_id AS id, children_alley AS isChildLane, status" +
-                ", description FROM bowling_alleys";
+                ", description, booked FROM bowling_alleys";
         RowMapper<BowlingLane> rowMapper = new BeanPropertyRowMapper<>(BowlingLane.class);
         return jdbcTemplate.query(sql, rowMapper);
     }

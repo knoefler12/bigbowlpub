@@ -11,7 +11,7 @@ public class BowlingLane {
     private boolean status;
     private boolean isChildLane;
     private String description;
-
+    private boolean booked;
 
     public BowlingLane() {
     }
@@ -46,5 +46,13 @@ public class BowlingLane {
     }
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public boolean isBooked() {
+        return booked;
+    }
+
+    public void setBooked(boolean booked) {
+        this.booked = booked;
     }
 }

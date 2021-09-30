@@ -11,6 +11,7 @@ public class AirHockeyTable {
     private int airhockeyTablesId;
     private boolean status;
     private String description;
+    private boolean booked;
 
     public AirHockeyTable() {
     }
@@ -38,4 +39,12 @@ public class AirHockeyTable {
     public String getDescription() {
         return description;
     }
+    public boolean isBooked() {
+        return booked;
+    }
+
+    public void setBooked(boolean booked) {
+        this.booked = booked;
+    }
+
 }
