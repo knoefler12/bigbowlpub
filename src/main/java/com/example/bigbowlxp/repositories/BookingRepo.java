@@ -38,7 +38,8 @@ public void deleteJoinedBookings(int id){
 
 public ArrayList<Booking> bowlingBooking(){
         ArrayList<Booking> listOfBowlingBooking = new ArrayList<>();
-        String sql = ""
+        String sql = "";
+        return null;
 }
 
 }
