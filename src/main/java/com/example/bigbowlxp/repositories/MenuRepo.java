@@ -20,9 +20,10 @@ public class MenuRepo {
         return jdbcTemplate.query(sql, menuRowMapper);
     }
 
-    public int changePrice(int price, int id){
+    public void changePrice(Menu menu, int id){
         String sql = "UPDATE food SET price = ? WHERE food_id = ?";
-        return jdbcTemplate.update(sql, price, id);
+        double price = menu.getPrice();
+        jdbcTemplate.update(sql, price, id);
     }
 
     public JdbcTemplate getTemplate() {

@@ -27,12 +27,12 @@ public class MenuController {
     @GetMapping("/mad")
     public String showFood(Model foodModel){
         foodModel.addAttribute("Menu", menuService.fetchMenu());
-        return "/mad";
+        return "mad.html";
     }
 
-    @PostMapping("/changePrice({id}")
-    public String changeFoodPrice(@PathVariable("id") int id, @ModelAttribute int price){
-        menuService.changeFoodPrice(price, id);
+    @PostMapping("/changePrice/{id}")
+    public String changeFoodPrice(@PathVariable("id") int id, @ModelAttribute Menu menu){
+        menuService.changeFoodPrice(menu, id);
         return "redirect:/mad";
     }
 }
