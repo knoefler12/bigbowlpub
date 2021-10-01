@@ -4,6 +4,7 @@ import org.springframework.lang.Nullable;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -17,22 +18,12 @@ public class Booking {
     private String lastName;
     private String phone;
     private Activity activity;
-    private Date date;
+    private LocalDate date;
     private String startTime;
     private int duration;
-    @Nullable
-    private ArrayList<Integer> bookingUnits;
 
     public int getBookingId() {
         return bookingId;
-    }
-
-    public ArrayList<Integer> getBookingUnits() {
-        return bookingUnits;
-    }
-
-    public void setBookingUnits(ArrayList<Integer> bookingUnits) {
-        this.bookingUnits = bookingUnits;
     }
 
     public void setBookingId(int bookingId) {
@@ -79,11 +70,11 @@ public class Booking {
         this.activity = activity;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
