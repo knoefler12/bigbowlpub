@@ -1,11 +1,15 @@
 package com.example.bigbowlxp.repositories;
 
+import com.example.bigbowlxp.models.AirHockeyTable;
 import com.example.bigbowlxp.models.Booking;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Repository
 public class BookingRepo{
@@ -41,5 +45,14 @@ public ArrayList<Booking> bowlingBooking(){
         String sql = "";
         return null;
 }
+
+    public List<Booking> fetchAirHockeyTableBooking(){
+        String sql = "SELECT * FROM sql4438617.bookings WHERE duration = 'AIRHOCKEY'";
+        RowMapper<Booking> bookingRowMapper = new BeanPropertyRowMapper<>(Booking.class);
+        return jdbcTemplate.query(sql, bookingRowMapper);
+    }
+
+
+
 
 }

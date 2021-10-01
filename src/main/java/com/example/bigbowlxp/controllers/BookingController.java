@@ -29,7 +29,7 @@ public class BookingController {
 
     @Autowired
     CustomerService customerService;
-
+/*
     @GetMapping("/bookings")
     public String getAllBookings(Model model){
         List<Booking> bookingList = bookingService.fetchAllBookings();
@@ -62,5 +62,10 @@ public class BookingController {
         bookingService.deleteJoinedBooking(id);
         return
     }*/
+@GetMapping("/airhockeytablesBookings")
+public String fetchAirHockeyTables(Model model){
+    model.addAttribute("airhockeytables", bookingService.fetchAirHockeyTableBooking());
+    return "hockeyBookings.html";
+}
 
 }
