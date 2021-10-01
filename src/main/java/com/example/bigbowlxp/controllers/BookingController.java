@@ -30,10 +30,10 @@ public class BookingController {
     @Autowired
     CustomerService customerService;
 
-    @GetMapping("/bookings")
-    public String getAllBookings(Model model){
-        //List<Booking> bookingList = bookingService.fetchAllBookings();
-        //model.addAttribute("bookings", bookingList);
+    @GetMapping("/airhockeybookings")
+    public String getAllAirHockeyBookings(Model model){
+        List<Booking> bookingList = bookingService.fetchAirHockeyTableBooking();
+        model.addAttribute("airhockeybookings", bookingList);
         return "bookings";
     }
 
