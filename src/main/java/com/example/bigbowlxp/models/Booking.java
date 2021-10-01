@@ -1,5 +1,7 @@
 package com.example.bigbowlxp.models;
 
+import org.springframework.lang.Nullable;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.util.ArrayList;
@@ -18,6 +20,7 @@ public class Booking {
     private Date date;
     private String startTime;
     private int duration;
+    @Nullable
     private ArrayList<Integer> bookingUnits;
 
     public int getBookingId() {

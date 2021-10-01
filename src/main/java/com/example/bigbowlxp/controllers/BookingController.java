@@ -70,6 +70,18 @@ public class BookingController {
     public String fetchAirHockeyTables(Model model){
         model.addAttribute("airhockeytables", bookingService.fetchAirHockeyTableBooking());
         return "hockeyBookings.html";
-}
+    }
+
+    @GetMapping("/bowlingBookings")
+    public String fetchBowlingBookings(Model model){
+        model.addAttribute("bowlingBookings", bookingService.fetchAirHockeyTableBooking());
+        return "bowlingBookings.html";
+    }
+
+    @GetMapping("/restaurantBookings")
+    public String fetchRestaurantBookings(Model model){
+        model.addAttribute("restaurantBookings", bookingService.fetchAirHockeyTableBooking());
+        return "restaurantBookings.html";
+    }
 
 }
