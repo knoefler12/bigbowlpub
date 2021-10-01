@@ -11,6 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
@@ -35,7 +36,7 @@ public class CalendarSortTest {
 
         bookingController.getBookingService().createBooking(booking);
 
-        ArrayList<Booking> bookings = bookingController.getBookingService().fetchBookingByDay(LocalDate.of(2020,9,10));
+        List<Booking> bookings = bookingController.getBookingService().fetchBookingByDay(LocalDate.of(2020,9,10));
         for (Booking b : bookings) {
             if(b.getBookingId() == Integer.MAX_VALUE){
                 fail("booking found in wrong list");

@@ -8,6 +8,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,6 +45,13 @@ public class BookingRepo{
         ArrayList<Booking> listOfBowlingBooking = new ArrayList<>();
         String sql = "";
         return null;
+    }
+
+    public List<Booking> fetchBookingByDay(LocalDate day) {
+        ArrayList<Booking> fetchBookingByDay = new ArrayList<>();
+        String sql = "SELECT * FROM bookings WHERE date = ?";
+        RowMapper<Booking> rowMapper = new BeanPropertyRowMapper<>(Booking.class);
+        return jdbcTemplate.query(sql, rowMapper, day);
     }
 
     public List<Booking> fetchAirHockeyTableBooking(){
