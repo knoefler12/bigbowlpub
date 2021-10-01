@@ -116,10 +116,10 @@ public class ArchitectureTest {
         BookingService bookingService = bookingController.getBookingService();
         assertNotNull(bookingService);
 
-        /*BookingRepo bookingRepo = bookingService.getBookingRepo();
+        BookingRepo bookingRepo = bookingService.getBookingRepo();
         assertNotNull(bookingRepo);
 
         JdbcTemplate template = bookingRepo.getTemplate();
-        assertNotNull(template);*/
+        assertNotNull(template);
     }
 }

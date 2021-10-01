@@ -9,9 +9,16 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 public class BookingService {
 
+    public List<Booking> fetchBookingByDay(LocalDate day) {
+        return bookingRepo.fetchBookingByDay(day);
+    }
 
     private BookingRepo bookingRepo;
 
@@ -25,6 +32,9 @@ public class BookingService {
     }
 
     public void createBooking(Booking b){
+
+
+
 
      bookingRepo.createBooking(b);
 

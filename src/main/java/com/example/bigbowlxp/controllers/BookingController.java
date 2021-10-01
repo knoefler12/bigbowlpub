@@ -74,14 +74,15 @@ public class BookingController {
 
     @GetMapping("/bowlingBookings")
     public String fetchBowlingBookings(Model model){
-        model.addAttribute("bowlingBookings", bookingService.fetchAirHockeyTableBooking());
+        model.addAttribute("bowlingBookings", bookingService.fetchBowlingBooking());
         return "bowlingBookings.html";
     }
 
     @GetMapping("/restaurantBookings")
     public String fetchRestaurantBookings(Model model){
-        model.addAttribute("restaurantBookings", bookingService.fetchAirHockeyTableBooking());
+        model.addAttribute("restaurantBookings", bookingService.fetchRestaurantBooking());
         return "restaurantBookings.html";
     }
+
 
 }
