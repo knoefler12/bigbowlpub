@@ -47,14 +47,8 @@ private JdbcTemplate jdbcTemplate;
     }
 
     public List<Booking> fetchAirHockeyTableBooking(){
-        String sql = "SELECT * FROM sql4438617.bookings WHERE duration = 'AIRHOCKEY'";
+        String sql = "SELECT * FROM sql4438617.bookings WHERE activity = 'AIRHOCKEY'";
         RowMapper<Booking> bookingRowMapper = new BeanPropertyRowMapper<>(Booking.class);
         return jdbcTemplate.query(sql, bookingRowMapper);
     }
-
-
-
-
-
-
 }

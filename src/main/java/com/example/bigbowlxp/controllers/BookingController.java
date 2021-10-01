@@ -44,6 +44,8 @@ public class BookingController {
         return "booking";
     }
 
+    
+
     @GetMapping("/createBooking")
     public String createBooking(){
         return "createBooking";
