@@ -1,5 +1,6 @@
 package com.example.bigbowlxp.repositories;
 
+import com.example.bigbowlxp.models.Activity;
 import com.example.bigbowlxp.models.AirHockeyTable;
 import com.example.bigbowlxp.models.Booking;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,11 +50,11 @@ public class BookingRepo{
         return null;
     }
 
-    public List<Booking> fetchBookingByDay(LocalDate day) {
+    public List<Booking> fetchBookingByDay(LocalDate day, Activity activity) {
         ArrayList<Booking> fetchBookingByDay = new ArrayList<>();
-        String sql = "SELECT * FROM bookings WHERE date = ?";
+        String sql = "SELECT * FROM bookings WHERE date = ? AND activity = ?";
         RowMapper<Booking> rowMapper = new BeanPropertyRowMapper<>(Booking.class);
-        return jdbcTemplate.query(sql, rowMapper, day);
+        return jdbcTemplate.query(sql, rowMapper, day, activity.toString());
     }
 
     public List<Booking> fetchAirHockeyTableBooking(){
