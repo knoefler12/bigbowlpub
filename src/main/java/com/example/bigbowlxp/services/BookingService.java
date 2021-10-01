@@ -1,5 +1,6 @@
 package com.example.bigbowlxp.services;
 
+import com.example.bigbowlxp.models.Activity;
 import com.example.bigbowlxp.models.AirHockeyTable;
 import com.example.bigbowlxp.models.Booking;
 import com.example.bigbowlxp.repositories.BookingRepo;
@@ -16,8 +17,8 @@ import java.util.List;
 @Service
 public class BookingService {
 
-    public List<Booking> fetchBookingByDay(LocalDate day) {
-        return bookingRepo.fetchBookingByDay(day);
+    public List<Booking> fetchBookingByDay(LocalDate day, Activity activity) {
+        return bookingRepo.fetchBookingByDay(day, activity);
     }
 
     private BookingRepo bookingRepo;
