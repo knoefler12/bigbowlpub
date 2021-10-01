@@ -3,16 +3,28 @@ package com.example.bigbowlxp.services;
 import com.example.bigbowlxp.models.AirHockeyTable;
 import com.example.bigbowlxp.models.Booking;
 import com.example.bigbowlxp.repositories.BookingRepo;
+import com.example.bigbowlxp.repositories.EquipmentRepo;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class BookingService {
-BookingRepo bookingRepo = new BookingRepo();
 
 
-public void createBooking(Booking b){
+    private BookingRepo bookingRepo;
+
+    @Autowired
+    public void setBookingRepo(BookingRepo bookingRepo) {
+        this.bookingRepo = bookingRepo;
+    }
+
+    public BookingRepo getBookingRepo() {
+        return bookingRepo;
+    }
+
+    public void createBooking(Booking b){
 
      bookingRepo.createBooking(b);
 
