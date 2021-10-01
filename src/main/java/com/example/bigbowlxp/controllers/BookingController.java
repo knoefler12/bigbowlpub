@@ -32,7 +32,7 @@ public class BookingController {
 
     @GetMapping("/bookings")
     public String getAllBookings(Model model){
-       // List<Booking> bookingList = bookingService.fetchAllBookings();
+        //List<Booking> bookingList = bookingService.fetchAllBookings();
         //model.addAttribute("bookings", bookingList);
         return "bookings";
     }

@@ -13,11 +13,12 @@ import java.util.List;
 
 @Repository
 public class BookingRepo{
-private JdbcTemplate jdbcTemplate;
+
+    private JdbcTemplate jdbcTemplate;
 
 
     @Autowired
-    public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
+    public void setJdbcTemplate(JdbcTemplate jdbcTemplate){
         this.jdbcTemplate = jdbcTemplate;
     }
 
@@ -55,12 +56,25 @@ public List<Booking> fetchBookingByActivity(String activity){
 
 
     public List<Booking> fetchAirHockeyTableBooking(){
-        String sql = "SELECT * FROM sql4438617.bookings WHERE activity = 'AIRHOCKEY'";
+        String sql = "SELECT booking_id, b.customer_id, first_name, last_name, phone, activity, date, start_time, duration" +
+                " FROM sql4438617.bookings b " +
+                "JOIN sql4438617.customers USING (customer_id) " +
+                "WHERE activity = 'AIRHOCKEY'" +
+                "ORDER BY date, start_time";
         RowMapper<Booking> bookingRowMapper = new BeanPropertyRowMapper<>(Booking.class);
         return jdbcTemplate.query(sql, bookingRowMapper);
     }
 
+    public List<Booking> fetchBowlingBooking(){
+        String sql = "SELECT * FROM sql4438617.bookings WHERE activity = 'BOWLING'";
+        RowMapper<Booking> bookingRowMapper = new BeanPropertyRowMapper<>(Booking.class);
+        return jdbcTemplate.query(sql, bookingRowMapper);
+    }
 
-
-
+    public List<Booking> fetchRestaurantBooking(){
+        String sql = "SELECT * FROM sql4438617.bookings WHERE activity = 'RESTAURENT'";
+        RowMapper<Booking> bookingRowMapper = new BeanPropertyRowMapper<>(Booking.class);
+        List<Booking> list = jdbcTemplate.query(sql, bookingRowMapper);
+        return list;
+    }
 }
