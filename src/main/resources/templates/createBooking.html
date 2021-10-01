@@ -63,7 +63,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" th:href="@{'/mad'}">
+                        <a class="nav-link" th:href="@{'/mad'}">
                             <i class="material-icons">table_chart</i>
                             <span>Resturant</span>
                         </a>
@@ -78,6 +78,12 @@
                         <a class="nav-link " th:href="@{'/equipment'}">
                             <i class="material-icons">person</i>
                             <span>Udstyr</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" th:href="@{'/createBooking'}">
+                            <i class="material-icons">person</i>
+                            <span>Lav en booking</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -117,27 +123,29 @@
                         </div>
                             <br>
                             <div class="form-group">
-                            <label for="participants">Kunde ID</label>
-                            <input name="customer_id" type="number" id="participants" class="form-control" placeholder="antal">
+                            <label for="participants">Kunde ID:</label>
+                            <input name="customer_id" type="number" id="participants" class="form-control" placeholder="Antal">
                             </div>
                             <div class="form-group">
-                                <label for="customer">Aktivitet</label>
-                                <input name="activity" type="text" id="customer" class="form-control" placeholder="navn">
+                                <label for="customer">Aktivitet:</label>
+                                <input name="activity" type="text" id="customer" class="form-control" placeholder="Navn">
                             </div>
                             <div class="form-group">
-                                <label for="startDate">Indtast dato</label>
+                                <label for="startDate">Indtast Dato:</label>
                                 <input name="date" type="date" id="startDate" class="form-control">
                             </div>
                         <div class="form-group">
-                            <label for="startDate">Indtast starttid</label>
+                            <label for="startDate">Indtast Starttid</label>
                             <input name="startTime" type="text" id="startTime" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label for="startDate">Varighed</label>
+                            <label for="startDate">Varighed:</label>
                             <input name="duration" type="number" id="duration" class="form-control">
                         </div>
 
-                        <button type="submit" class="btn btn-primary">Bestil</button>
+                        <button type="submit" style="background-color: green; border-color: green" class="btn btn-primary">Bestil</button>
+                        <br>
+                        <br>
                     </form>
 
                 </div>

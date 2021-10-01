@@ -75,6 +75,12 @@
                 </a>
               </li>
               <li class="nav-item">
+                <a class="nav-link " th:href="@{'/createBooking'}">
+                  <i class="material-icons">person</i>
+                  <span>Lav en booking</span>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link " th:href="@{'https://dk.trustpilot.com/review/www.glostrup-bowling.dk'}">
                   <img src="/billeder/trustpilot.png" alt="Trustpilot" width="90" height="40">
                 </a>
@@ -105,7 +111,7 @@
                   <div class="card-header border-bottom">
                     <h6 class="m-0">Menu</h6>
                     <br>
-                    <a href="/restaurantbookings" class="btn btn-primary">Bookings</a>
+                    <a href="/restaurantbookings" style="background-color: green; border-color: green" class="btn btn-primary">Bookings</a>
                   </div>
                   <div class="card-body p-0 pb-3 text-center">
                     <table class="table mb-0">
