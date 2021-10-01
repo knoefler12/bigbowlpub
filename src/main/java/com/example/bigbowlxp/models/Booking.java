@@ -23,6 +23,11 @@ public class Booking {
     private String startTime;
     private int duration;
 
+
+
+    public Booking (){
+    }
+
     public int getBookingId() {
         return bookingId;
     }
@@ -95,6 +100,4 @@ public class Booking {
         this.duration = duration;
     }
 
-    public Booking (){
-    }
 }
