@@ -24,35 +24,31 @@ private JdbcTemplate jdbcTemplate;
     public JdbcTemplate getTemplate() {
         return jdbcTemplate;
     }
-    public void createBooking(Booking b ){
 
+    public void createBooking(Booking b ){
         String sql = "INSERT INTO bookings(customerId, activity, date, startTime, duration) VALUES (?, ?, ?, ?, ?)";
         jdbcTemplate.update(sql, b.getCustomerId(), b.getActivity(), b.getDate(), b.getStartTime(), b.getDuration());
 
-}
+    }
     public void deleteBooking(int id){
-
         String sql ="DELETE FROM bookings WHERE bookingId = ?";
         jdbcTemplate.update(sql,id);
-}
-public void deleteJoinedBookings(int id){
+    }
+
+    public void deleteJoinedBookings(int id){
         String sql = "DELETE FROM bookings_unit WHERE booking_id = ?";
         jdbcTemplate.update(sql, id);
-}
+    }
 
-public ArrayList<Booking> bowlingBooking(){
+    public ArrayList<Booking> bowlingBooking(){
         ArrayList<Booking> listOfBowlingBooking = new ArrayList<>();
         String sql = "";
         return null;
-}
+    }
 
     public List<Booking> fetchAirHockeyTableBooking(){
-        String sql = "SELECT * FROM sql4438617.bookings WHERE duration = 'AIRHOCKEY'";
+        String sql = "SELECT * FROM sql4438617.bookings WHERE activity = 'AIRHOCKEY'";
         RowMapper<Booking> bookingRowMapper = new BeanPropertyRowMapper<>(Booking.class);
         return jdbcTemplate.query(sql, bookingRowMapper);
     }
-
-
-
-
 }
