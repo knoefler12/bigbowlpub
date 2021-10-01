@@ -1,5 +1,6 @@
 package com.example.bigbowlxp.repositories;
 
+import com.example.bigbowlxp.models.AirHockeyTable;
 import com.example.bigbowlxp.models.Booking;
 import com.example.bigbowlxp.models.BowlingLane;
 import com.example.bigbowlxp.models.Menu;
@@ -52,6 +53,15 @@ public List<Booking> fetchBookingByActivity(String activity){
 
         return jdbcTemplate.query(sql,rowMapper,activity);
 }
+
+
+    public List<Booking> fetchAirHockeyTableBooking(){
+        String sql = "SELECT * FROM sql4438617.bookings WHERE duration = 'AIRHOCKEY'";
+        RowMapper<Booking> bookingRowMapper = new BeanPropertyRowMapper<>(Booking.class);
+        return jdbcTemplate.query(sql, bookingRowMapper);
+    }
+
+
 
 
 }
