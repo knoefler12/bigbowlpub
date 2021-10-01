@@ -3,6 +3,7 @@ package com.example.bigbowlxp.models;
 import org.springframework.lang.Nullable;
 
 import javax.persistence.Entity;
+import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -13,12 +14,12 @@ public class Booking {
 
     @Id
     private int bookingId;
-    private int customerId;
+    private int customer_id;
     private String firstName;
     private String lastName;
     private String phone;
     private Activity activity;
-    private LocalDate date;
+    private String date;
     private String startTime;
     private int duration;
 
@@ -35,12 +36,12 @@ public class Booking {
         this.bookingId = bookingId;
     }
 
-    public int getCustomerId() {
-        return customerId;
+    public int getCustomer_id() {
+        return customer_id;
     }
 
-    public void setCustomerId(int customerId) {
-        this.customerId = customerId;
+    public void setCustomer_id(int customerId) {
+        this.customer_id = customerId;
     }
 
     public String getFirstName() {
@@ -75,11 +76,11 @@ public class Booking {
         this.activity = activity;
     }
 
-    public LocalDate getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(LocalDate date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

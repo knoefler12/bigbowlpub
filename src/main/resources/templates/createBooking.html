@@ -117,17 +117,26 @@
                         </div>
                             <br>
                             <div class="form-group">
-                            <label for="participants">Antal af deltagere</label>
-                            <input name="participants" type="number" id="participants" class="form-control" placeholder="antal">
+                            <label for="participants">Kunde ID</label>
+                            <input name="customer_id" type="number" id="participants" class="form-control" placeholder="antal">
                             </div>
                             <div class="form-group">
-                                <label for="customer">Kundens navn</label>
-                                <input name="customer" type="text" id="customer" class="form-control" placeholder="navn">
+                                <label for="customer">Aktivitet</label>
+                                <input name="activity" type="text" id="customer" class="form-control" placeholder="navn">
                             </div>
                             <div class="form-group">
                                 <label for="startDate">Indtast dato</label>
-                                <input name="startDate" type="datetime-local" id="startDate" class="form-control">
+                                <input name="date" type="date" id="startDate" class="form-control">
                             </div>
+                        <div class="form-group">
+                            <label for="startDate">Indtast starttid</label>
+                            <input name="startTime" type="text" id="startTime" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="startDate">Varighed</label>
+                            <input name="duration" type="datetime-local" id="duration" class="form-control">
+                        </div>
+
                         <button type="submit" class="btn btn-primary">Bestil</button>
                     </form>
 
