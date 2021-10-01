@@ -96,7 +96,7 @@
           <div class="page-header row no-gutters py-4">
             <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
               <span class="text-uppercase page-subtitle"></span>
-              <h3 class="page-title">Airhockey Bookings</h3>
+              <h3 class="page-title">Restaurant Bookings</h3>
             </div>
           </div>
           <!-- End Page Header -->
@@ -105,7 +105,7 @@
             <div class="col">
               <div class="card card-small mb-4">
                 <div class="card-header border-bottom">
-                  <h6 class="m-0">Oversigt over airhockey bookings</h6>
+                  <h6 class="m-0">Oversigt over restaurant bookings</h6>
                 </div>
                 <div class="card-body p-0 pb-3 text-center">
                   <table class="table mb-0">
@@ -114,17 +114,17 @@
                       <th scope="col" class="border-0">Booking id</th>
                       <th scope="col" class="border-0">Navn</th>
                       <th scope="col" class="border-0">Dato</th>
-                      <th scope="col" class="border-0">Starttid</th>
+                      <th scope="col" class="border-0">Start tid</th>
                       <th scope="col" class="border-0">Varighed</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr th:each="airhockeytables: ${airhockeytables}">
-                      <td th:text="${airhockeytables.bookingId}"/>
-                      <td th:text="${airhockeytables.firstName + ' ' + airhockeytables.lastName}"/>
-                      <td th:text="${airhockeytables.date}"/>
-                      <td th:text="${airhockeytables.startTime}" />
-                      <td th:text="${airhockeytables.duration}" />
+                    <tr th:each="restaurantBookings: ${restaurantBookings}">
+                      <td th:text="${restaurantBookings.bookingId}"/>
+                      <td th:text="${restaurantBookings.firstName + ' ' + restaurantBookings.lastName}"/>
+                      <td th:text="${restaurantBookings.date}"/>
+                      <td th:text="${restaurantBookings.startTime}" />
+                      <td th:text="${restaurantBookings.duration}" />
                     </tr>
                     </tbody>
                   </table>

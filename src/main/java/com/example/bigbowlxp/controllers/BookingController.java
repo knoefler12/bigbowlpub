@@ -30,10 +30,10 @@ public class BookingController {
     @Autowired
     CustomerService customerService;
 
-    @GetMapping("/bookings")
-    public String getAllBookings(Model model){
-        //List<Booking> bookingList = bookingService.fetchAllBookings();
-        //model.addAttribute("bookings", bookingList);
+    @GetMapping("/airhockeybookings")
+    public String getAllAirHockeyBookings(Model model){
+        List<Booking> bookingList = bookingService.fetchAirHockeyTableBooking();
+        model.addAttribute("airhockeybookings", bookingList);
         return "bookings";
     }
 
@@ -65,19 +65,19 @@ public class BookingController {
     }
 
 
-    @GetMapping("/airhockeytablesBookings")
+    @GetMapping("/airhockeytablesbookings")
     public String fetchAirHockeyTables(Model model){
         model.addAttribute("airhockeytables", bookingService.fetchAirHockeyTableBooking());
         return "hockeyBookings.html";
     }
 
-    @GetMapping("/bowlingBookings")
+    @GetMapping("/bowlingbookings")
     public String fetchBowlingBookings(Model model){
         model.addAttribute("bowlingBookings", bookingService.fetchBowlingBooking());
         return "bowlingBookings.html";
     }
 
-    @GetMapping("/restaurantBookings")
+    @GetMapping("/restaurantbookings")
     public String fetchRestaurantBookings(Model model){
         model.addAttribute("restaurantBookings", bookingService.fetchRestaurantBooking());
         return "restaurantBookings.html";

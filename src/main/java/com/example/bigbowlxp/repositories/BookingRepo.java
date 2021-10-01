@@ -87,7 +87,7 @@ public List<Booking> fetchBookingByActivity(String activity){
         String sql = "SELECT booking_id, b.customer_id, first_name, last_name, phone, activity, date, start_time, duration" +
                 " FROM sql4438617.bookings b " +
                 "JOIN sql4438617.customers USING (customer_id) " +
-                "WHERE activity = 'RESTAURENT'" +
+                "WHERE activity = 'RESTAURANT'" +
                 "ORDER BY date, start_time";
         RowMapper<Booking> bookingRowMapper = new BeanPropertyRowMapper<>(Booking.class);
         List<Booking> list = jdbcTemplate.query(sql, bookingRowMapper);
