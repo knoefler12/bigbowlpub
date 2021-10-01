@@ -27,8 +27,9 @@ public class BookingRepo{
     }
 
     public void createBooking(Booking b ){
-        String sql = "INSERT INTO bookings(customerId, activity, date, startTime, duration) VALUES (?, ?, ?, ?, ?)";
-        jdbcTemplate.update(sql, b.getCustomerId(), b.getActivity(), b.getDate(), b.getStartTime(), b.getDuration());
+        System.out.println(b.getActivity().toString().length());
+        String sql = "INSERT INTO bookings(customer_id, activity, date, start_time, duration) VALUES (?, ?, ?, ?, ?)";
+        jdbcTemplate.update(sql, b.getCustomer_id(), b.getActivity().toString(), b.getDate(), b.getStartTime(), b.getDuration());
 
     }
     public void deleteBooking(int id){
