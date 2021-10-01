@@ -3,6 +3,7 @@ package com.example.bigbowlxp;
 import com.example.bigbowlxp.controllers.BookingController;
 import com.example.bigbowlxp.models.Activity;
 import com.example.bigbowlxp.models.Booking;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -21,7 +22,7 @@ public class CalendarSortTest {
     BookingController bookingController;
 
     @Test
-    void test(){
+    void dayCalendarTest(){
         Booking booking = new Booking();
         booking.setBookingId(Integer.MAX_VALUE);
         booking.setBookingUnits(new ArrayList<>(){{add(1);add(2);}});
@@ -49,6 +50,11 @@ public class CalendarSortTest {
             }
         }
         assertTrue(inList);
+    }
+
+    @AfterEach
+    void cleanUp(){
+        bookingController.deleteBooking(Integer.MAX_VALUE);
     }
 
 
