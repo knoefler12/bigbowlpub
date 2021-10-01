@@ -8,6 +8,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,6 +47,13 @@ public class BookingRepo{
         return null;
     }
 
+    public List<Booking> fetchBookingByDay(LocalDate day) {
+        ArrayList<Booking> fetchBookingByDay = new ArrayList<>();
+        String sql = "SELECT * FROM bookings WHERE date = ?";
+        RowMapper<Booking> rowMapper = new BeanPropertyRowMapper<>(Booking.class);
+        return jdbcTemplate.query(sql, rowMapper, day);
+    }
+
     public List<Booking> fetchAirHockeyTableBooking(){
         String sql = "SELECT booking_id, b.customer_id, first_name, last_name, phone, activity, date, start_time, duration" +
                 " FROM sql4438617.bookings b " +
@@ -57,13 +65,21 @@ public class BookingRepo{
     }
 
     public List<Booking> fetchBowlingBooking(){
-        String sql = "SELECT * FROM sql4438617.bookings WHERE activity = 'BOWLING'";
+        String sql = "SELECT booking_id, b.customer_id, first_name, last_name, phone, activity, date, start_time, duration" +
+                " FROM sql4438617.bookings b " +
+                "JOIN sql4438617.customers USING (customer_id) " +
+                "WHERE activity = 'BOWLING'" +
+                "ORDER BY date, start_time";
         RowMapper<Booking> bookingRowMapper = new BeanPropertyRowMapper<>(Booking.class);
         return jdbcTemplate.query(sql, bookingRowMapper);
     }
 
     public List<Booking> fetchRestaurantBooking(){
-        String sql = "SELECT * FROM sql4438617.bookings WHERE activity = 'RESTAURENT'";
+        String sql = "SELECT booking_id, b.customer_id, first_name, last_name, phone, activity, date, start_time, duration" +
+                " FROM sql4438617.bookings b " +
+                "JOIN sql4438617.customers USING (customer_id) " +
+                "WHERE activity = 'RESTAURENT'" +
+                "ORDER BY date, start_time";
         RowMapper<Booking> bookingRowMapper = new BeanPropertyRowMapper<>(Booking.class);
         List<Booking> list = jdbcTemplate.query(sql, bookingRowMapper);
         return list;
