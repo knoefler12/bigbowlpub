@@ -51,18 +51,17 @@ public class BookingController {
         return "createBooking";
     }
 
-
     @PostMapping("/bookings")
     public String createBooking(@ModelAttribute Booking booking){
         bookingService.createBooking(booking);
-        return "redirect:/bookings";
+        return "redirect:/index";
     }
 
     @GetMapping("/deleteBooking/{id}")
     public String deleteBooking(@PathVariable int id){
         bookingService.deleteBooking(id);
         bookingService.deleteJoinedBooking(id);
-        return "redirect:/bookings";
+        return "redirect:/index";
     }
 
 

@@ -26,7 +26,6 @@ public class CalendarSortTest {
     void dayCalendarTest(){
         Booking booking = new Booking();
         booking.setBookingId(Integer.MAX_VALUE);
-        booking.setBookingUnits(new ArrayList<>(){{add(1);add(2);}});
         booking.setActivity(Activity.BOWLING);
         booking.setFirstName("Jørgen");
         booking.setLastName("Biil");
