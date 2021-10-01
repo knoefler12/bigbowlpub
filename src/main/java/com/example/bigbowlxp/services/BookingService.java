@@ -26,6 +26,13 @@ public void createBooking(Booking b){
     public List<Booking> fetchAirHockeyTableBooking(){
         return bookingRepo.fetchAirHockeyTableBooking();
     }
+    public List<Booking> fetchBowlingBooking(){
+        return bookingRepo.fetchBowlingBooking();
+    }
+    public List<Booking> fetchRestaurantBooking(){
+        return bookingRepo.fetchRestaurantBooking();
+    }
+
     public void deleteJoinedBooking(int id){
     bookingRepo.deleteJoinedBookings(id);
     }

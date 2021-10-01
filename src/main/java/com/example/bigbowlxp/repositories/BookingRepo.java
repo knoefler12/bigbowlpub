@@ -51,4 +51,16 @@ private JdbcTemplate jdbcTemplate;
         RowMapper<Booking> bookingRowMapper = new BeanPropertyRowMapper<>(Booking.class);
         return jdbcTemplate.query(sql, bookingRowMapper);
     }
+
+    public List<Booking> fetchBowlingBooking(){
+        String sql = "SELECT * FROM sql4438617.bookings WHERE activity = 'BOWLING'";
+        RowMapper<Booking> bookingRowMapper = new BeanPropertyRowMapper<>(Booking.class);
+        return jdbcTemplate.query(sql, bookingRowMapper);
+    }
+
+    public List<Booking> fetchRestaurantBooking(){
+        String sql = "SELECT * FROM sql4438617.bookings WHERE activity = 'RESTAURENT'";
+        RowMapper<Booking> bookingRowMapper = new BeanPropertyRowMapper<>(Booking.class);
+        return jdbcTemplate.query(sql, bookingRowMapper);
+    }
 }
