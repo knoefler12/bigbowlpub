@@ -75,6 +75,12 @@
                 </a>
               </li>
               <li class="nav-item">
+                <a class="nav-link " th:href="@{'/createBooking'}">
+                  <i class="material-icons">person</i>
+                  <span>Lav en booking</span>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link " th:href="@{'https://dk.trustpilot.com/review/www.glostrup-bowling.dk'}">
                   <img src="/billeder/trustpilot.png" alt="Trustpilot" width="90" height="40">
                 </a>
@@ -104,7 +110,8 @@
                 <div class="card card-small mb-4">
                   <div class="card-header border-bottom">
                     <h6 class="m-0">Menu</h6>
-                    <a href="http://localhost:8080/restaurantbookings"><button>Bookings</button></a>
+                    <br>
+                    <a href="/restaurantbookings" style="background-color: green; border-color: green" class="btn btn-primary">Bookings</a>
                   </div>
                   <div class="card-body p-0 pb-3 text-center">
                     <table class="table mb-0">
@@ -126,7 +133,7 @@
                           <td th:text ="${Menu.price} + ' kr.'"></td>
                           <td>
 
-                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                            <button type="button" class="btn btn-primary" style="background-color: #FF0000; border-color: #FF0000" data-toggle="modal"
                                     th:attr="data-target=${'#exampleModal' + Menu.food_id}"
                                     data-row="${Menu}">
                               Ny Pris
@@ -141,7 +148,6 @@
               </div>
             </div>
           </div>
-
             <div th:each="Menu : ${Menu}">
               <div class="modal fade" th:attr="id=${'exampleModal' + Menu.food_id}" tabindex="-1"
                    role="dialog"

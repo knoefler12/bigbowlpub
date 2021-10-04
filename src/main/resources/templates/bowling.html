@@ -78,14 +78,18 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link " th:href="@{'/createBooking'}">
+                            <i class="material-icons">person</i>
+                            <span>Lav en booking</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link " th:href="@{'https://dk.trustpilot.com/review/www.glostrup-bowling.dk'}">
                             <img src="/billeder/trustpilot.png" alt="Trustpilot" width="90" height="40">
                         </a>
                     </li>
                 </ul>
-
             </div>
-
         </aside>
         <!-- End Main Sidebar -->
         <main class="main-content col-lg-10 col-md-9 col-sm-12 p-0 offset-lg-2 offset-md-3">
@@ -108,7 +112,8 @@
                             <div class="card card-small mb-4">
                                 <div class="card-header border-bottom">
                                     <h6 class="m-0">Oversigt over bowlingbaner</h6>
-                                    <a href="http://localhost:8080/bowlingbookings"><button>Bookings</button></a>
+                                    <br>
+                                    <a href="/bowlingbookings" style="background-color: green; border-color: green" class="btn btn-primary">Bookings</a>
                                 </div>
                                 <div class="card-body p-0 pb-3 text-center">
                                     <table class="table mb-0">
@@ -134,16 +139,14 @@
                                             <td th:if="${lane.booked}">Optaget</td>
                                             <td>
                                                 <a th:href="@{'/statusupdate/'+${lane.id}}">
-                                                    <button class="btn-warning" id="btn-warning">Rediger</button>
+                                                    <button class="btn btn-primary" id="btn-warning" style="background-color: #FFA500; border-color: #FFA500">Rediger</button>
                                                     <a/>
-
-                                                    <button type="button" class="btn-primary" data-toggle="modal"
+                                                    <button type="button" class="btn btn-primary" data-toggle="modal"
                                                             th:attr="data-target=${'#exampleModal' + lane.id}"
-                                                            data-row="${lane}    ">
+                                                            data-row="${lane} ">
                                                         Forklaring
                                                     </button>
-
-                                                        <button  th:if="${lane.booked}" type="button" class="btn btn-primary" data-toggle="modal"
+                                                        <button  th:if="${lane.booked}" type="button" style="background-color: #008000; border-color: #008000" class="btn btn-primary" data-toggle="modal"
                                                                 th:attr="data-target=${'#exampleModal' + lane.id}"
                                                                 data-row="${lane}    ">
                                                             Info

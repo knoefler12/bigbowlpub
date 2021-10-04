@@ -14,8 +14,6 @@
   <script async defer src="https://buttons.github.io/buttons.js"></script>
 </head>
 <body class="h-100">
-
-
 <div class="container-fluid">
   <div class="row">
     <!-- Main Sidebar -->
@@ -79,6 +77,12 @@
             </a>
           </li>
           <li class="nav-item">
+            <a class="nav-link " th:href="@{'/createBooking'}">
+              <i class="material-icons">person</i>
+              <span>Lav en booking</span>
+            </a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link " th:href="@{'https://dk.trustpilot.com/review/www.glostrup-bowling.dk'}">
               <img src="/billeder/trustpilot.png" alt="Trustpilot" width="90" height="40">
             </a>
@@ -112,12 +116,12 @@
                 <div class="card-body p-0 pb-3 text-center">
                   <form action="/newEquipment" method="post">
                     <label>Udstyr</label>
-                    <input type="text" name="name" value="name"><br>
-                    <label>Størrelse - eu</label>
-                    <input type="text" name="type" value="type"><br>
+                    <input type="text" name="name" value="Navn"><br>
+                    <label>Størrelse (EU)</label>
+                    <input type="text" name="type" value="Type"><br>
                     <label>Mængde</label>
-                    <input type="text" name="amount" value="amount"><br>
-                    <input type="submit" value="Tilføj">
+                    <input type="text" name="amount" value="Mængde"><br>
+                    <input class="btn btn-warning" id="btn-equipmentDelete" style="background-color: green; border-color: green; color: white" type="submit" value="Tilføj">
                   </form>
                 </div>
               </div>

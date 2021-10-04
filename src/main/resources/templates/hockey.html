@@ -80,6 +80,12 @@
                 </a>
               </li>
               <li class="nav-item">
+                <a class="nav-link " th:href="@{'/createBooking'}">
+                  <i class="material-icons">person</i>
+                  <span>Lav en booking</span>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link " th:href="@{'https://dk.trustpilot.com/review/www.glostrup-bowling.dk'}">
                   <img src="/billeder/trustpilot.png" alt="Trustpilot" width="90" height="40">
                 </a>
@@ -109,7 +115,8 @@
                 <div class="card card-small mb-4">
                   <div class="card-header border-bottom">
                     <h6 class="m-0">Oversigt over airhockey baner</h6>
-                    <a href="http://localhost:8080/airhockeytablesbookings"><button>Bookings</button></a>
+                    <br>
+                    <a href="/airhockeytablesbookings" style="background-color: green; border-color: green" class="btn btn-primary">Bookings</a>
                   </div>
                   <div class="card-body p-0 pb-3 text-center">
                     <table class="table mb-0">
@@ -141,7 +148,7 @@
                                   data-row="${airhockeyTablesId}">
                             Forklaring
                           </button>
-                          <button th:if="${airhockeytables.booked}" type="button" class="btn btn-primary" data-toggle="modal"
+                          <button th:if="${airhockeytables.booked}" type="button" class="btn btn-primary" style="background-color: #008000; border-color: #008000" data-toggle="modal"
                                   th:attr="data-target=${'#exampleModal' + airhockeytables.airhockeyTablesId}"
                                   data-row="${airhockeytables}    ">
                             Info
