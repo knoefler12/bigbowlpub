@@ -35,6 +35,14 @@ public class BookingBeverage {
         this.name = name;
     }
 
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
     public int getAmount() {
         return amount;
     }

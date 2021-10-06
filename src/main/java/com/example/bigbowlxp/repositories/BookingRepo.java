@@ -104,8 +104,8 @@ public class BookingRepo{
     }
 
     public List<BookingBeverage> fetchBookingBeveragesByBookingId(int id){
-        String sql = "SELECT booking_id, beverage.beverage_id, name, price, amount FROM booking_beverages" +
-                "JOIN beverages" +
+        String sql = "SELECT booking_id, beverage.beverage_id, name, price, amount FROM booking_beverages " +
+                "JOIN beverages USING ( beverages_id) " +
                 "WHERE booking_id = ?";
         RowMapper<BookingBeverage> bookingBeverageRowMapper = new BeanPropertyRowMapper<>(BookingBeverage.class);
         List<BookingBeverage> list = jdbcTemplate.query(sql, bookingBeverageRowMapper, id);
