@@ -29,12 +29,13 @@ public class BeverageController {
         return "redirect:/mad";
     }
 
-    @GetMapping("/mad/{beverageId}")
+    @GetMapping("/beverage/{beverageId}")
     public String updateBeverage(@PathVariable int beverageId, Model model){
         model.addAttribute("beverage", beverageService.findBeverageById(beverageId));
         return "updateBeverage";
     }
-    @PostMapping("/updatePrice/{id}")
+
+    @PostMapping("/beverage/{id}")
     public String updateBeverage(@ModelAttribute Beverage beverage) {
         beverageService.updateBeverage(beverage);
         return "redirect:/mad";

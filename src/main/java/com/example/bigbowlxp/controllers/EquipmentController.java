@@ -29,12 +29,6 @@ public class EquipmentController {
         return "equipment";
     }
 
-    @GetMapping("/equipment/{equipment_id}")
-    public String updateEquipment(@PathVariable int equipment_id, Model model){
-        model.addAttribute("equipment", equipmentService.findEquipmentById(equipment_id));
-        return "updateEquipment";
-    }
-
     @GetMapping("/newEquipment")
     public String newEquipment(){
         return "newEquipment";
@@ -44,6 +38,11 @@ public class EquipmentController {
     public String newEquipment(@ModelAttribute Equipment equipment){
         equipmentService.addEquipment(equipment);
         return "redirect:/equipment";
+    }
+    @GetMapping("/equipment/{equipment_id}")
+    public String updateEquipment(@PathVariable int equipment_id, Model model){
+        model.addAttribute("equipment", equipmentService.findEquipmentById(equipment_id));
+        return "updateEquipment";
     }
 
     @PostMapping("equipment/{equipment_id}")
