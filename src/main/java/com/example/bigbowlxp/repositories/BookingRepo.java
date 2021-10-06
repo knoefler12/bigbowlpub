@@ -35,7 +35,10 @@ public class BookingRepo{
 
     }
     public void deleteBooking(int id){
-        String sql ="DELETE FROM bookings WHERE bookingId = ?";
+        String sql = "DELETE FROM booking_beverages WHERE bookingId = ?";
+        jdbcTemplate.update(sql,id);
+
+        sql ="DELETE FROM bookings WHERE bookingId = ?";
         jdbcTemplate.update(sql,id);
     }
 
