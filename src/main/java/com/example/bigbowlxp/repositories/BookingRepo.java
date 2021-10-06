@@ -112,6 +112,11 @@ public class BookingRepo{
         return list;
     }
 
+    public void editBookingBeverages(BookingBeverage bb){
+        String sql = "UPDATE booking_beverages SET amount = ? WHERE booking_id = ? AND beverage_id = ?";
+        jdbcTemplate.update(sql, bb.getAmount(), bb.getBookingId(), bb.getBeverageId());
+    }
+
     public void editBooking(int id){
         String sql = "UPDATE sql4438617.bookings SET date = ?, start_time = ?, duration = ? WHERE booking_id = ?";
         jdbcTemplate.update(sql);
