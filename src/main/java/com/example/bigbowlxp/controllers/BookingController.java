@@ -82,6 +82,4 @@ public class BookingController {
         model.addAttribute("restaurantBookings", bookingService.fetchRestaurantBooking());
         return "restaurantBookings.html";
     }
-
-
 }

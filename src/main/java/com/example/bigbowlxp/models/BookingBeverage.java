@@ -1,23 +1,22 @@
 package com.example.bigbowlxp.models;
 
+public class BookingBeverage {
 
-import javax.persistence.Id;
-
-public class Beverage {
-
-
-    @Id
+    private int bookingId;
     private int beverageId;
     private String name;
     private double price;
+    private int amount;
 
-    public Beverage() {
+    public BookingBeverage() {
     }
 
-    public Beverage(int beverageId, String name, double price) {
-        this.beverageId = beverageId;
-        this.name = name;
-        this.price = price;
+    public int getBookingId() {
+        return bookingId;
+    }
+
+    public void setBookingId(int bookingId) {
+        this.bookingId = bookingId;
     }
 
     public int getBeverageId() {
@@ -42,5 +41,13 @@ public class Beverage {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
     }
 }

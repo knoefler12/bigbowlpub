@@ -28,8 +28,9 @@ public class BeverageController {
     }
 
     @PostMapping("/updatePrice/{id}")
-    public String updateBeverage(@PathVariable int id) {
-        return null;
+    public String updateBeverage(@PathVariable int id, @RequestParam int price) {
+        beverageService.updatePrice(price, id);
+        return "redirect:/mad";
     }
 
     public BeverageService getBeverageService() {
