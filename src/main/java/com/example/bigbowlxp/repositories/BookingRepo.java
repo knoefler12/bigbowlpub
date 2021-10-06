@@ -90,4 +90,10 @@ public class BookingRepo{
         List<Booking> list = jdbcTemplate.query(sql, bookingRowMapper);
         return list;
     }
+
+    public void editBooking(int id){
+        String sql = "UPDATE sql4438617.bookings SET date = ?, start_time = ?, duration = ? WHERE booking_id = ?";
+        jdbcTemplate.update(sql);
+
+    }
 }
