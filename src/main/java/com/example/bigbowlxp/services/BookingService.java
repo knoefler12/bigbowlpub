@@ -31,6 +31,7 @@ public class BookingService {
     public List<Booking> fetchAirHockeyTableBooking(){
         return bookingRepo.fetchAirHockeyTableBooking();
     }
+
     public List<Booking> fetchBowlingBooking(){
         return bookingRepo.fetchBowlingBooking();
     }

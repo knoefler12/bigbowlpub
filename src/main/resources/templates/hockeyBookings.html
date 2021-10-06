@@ -123,6 +123,7 @@
                       <th scope="col" class="border-0">Dato</th>
                       <th scope="col" class="border-0">Starttid</th>
                       <th scope="col" class="border-0">Varighed</th>
+                      <th scope="col" class="border-0">Handling</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -132,6 +133,13 @@
                       <td th:text="${airhockeytables.date}"/>
                       <td th:text="${airhockeytables.startTime}" />
                       <td th:text="${airhockeytables.duration}" />
+                      <td>
+                        <a th:href="@{'/redigerairhockeytablesbooking/'+${airhockeytables.bookingId}}">
+                          <button  type="button" style="background-color: #008000; border-color: #008000" class="btn btn-primary">
+                            Rediger
+                          </button>
+                        </a>
+                      </td>
                     </tr>
                     </tbody>
                   </table>
