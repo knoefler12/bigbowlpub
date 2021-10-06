@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Equipment</title>
-    <meta name="description" content="A high-quality &amp; free Bootstrap admin dashboard template pack that comes with lots of templates and components.">
+    <title>Vagtplan</title>
+    <meta name="description" content="Big Bowl">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -14,52 +14,7 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
 </head>
 <body class="h-100">
-<div class="color-switcher animated">
-    <h5>Accent Color</h5>
-    <ul class="accent-colors">
-        <li class="accent-primary active" data-color="primary">
-            <i class="material-icons">check</i>
-        </li>
-        <li class="accent-secondary" data-color="secondary">
-            <i class="material-icons">check</i>
-        </li>
-        <li class="accent-success" data-color="success">
-            <i class="material-icons">check</i>
-        </li>
-        <li class="accent-info" data-color="info">
-            <i class="material-icons">check</i>
-        </li>
-        <li class="accent-warning" data-color="warning">
-            <i class="material-icons">check</i>
-        </li>
-        <li class="accent-danger" data-color="danger">
-            <i class="material-icons">check</i>
-        </li>
-    </ul>
-    <div class="actions mb-4">
-        <a class="mb-2 btn btn-sm btn-primary w-100 d-table mx-auto extra-action" href="https://designrevision.com/downloads/shards-dashboard-lite/">
-            <i class="material-icons">cloud</i> Download</a>
-        <a class="mb-2 btn btn-sm btn-white w-100 d-table mx-auto extra-action" href="https://designrevision.com/docs/shards-dashboard-lite">
-            <i class="material-icons">book</i> Documentation</a>
-    </div>
-    <div class="social-wrapper">
-        <div class="social-actions">
-            <h5 class="my-2">Help us Grow</h5>
-            <div class="inner-wrapper">
-                <a class="github-button" href="https://github.com/DesignRevision/shards-dashboard" data-icon="octicon-star" data-show-count="true" aria-label="Star DesignRevision/shards-dashboard on GitHub">Star</a>
-                <!-- <iframe style="width: 91px; height: 21px;"src="https://yvoschaap.com/producthunt/counter.html#href=https%3A%2F%2Fwww.producthunt.com%2Fr%2Fp%2F112998&layout=wide" width="56" height="65" scrolling="no" frameborder="0" allowtransparency="true"></iframe> -->
-            </div>
-        </div>
-        <div id="social-share" data-url="https://designrevision.com/downloads/shards-dashboard-lite/" data-text="🔥 Check out Shards Dashboard Lite, a free and beautiful Bootstrap 4 admin dashboard template!" data-title="share"></div>
-        <div class="loading-overlay">
-            <div class="spinner"></div>
-        </div>
-    </div>
-    <div class="close">
-        <i class="material-icons">close</i>
-    </div>
 </div>
-
 <div class="container-fluid">
     <div class="row">
         <!-- Main Sidebar -->
@@ -68,12 +23,9 @@
                 <nav class="navbar align-items-stretch navbar-light bg-white flex-md-nowrap border-bottom p-0">
                     <a class="navbar-brand w-100 mr-0" th:href="@{'/'}" style="line-height: 25px;">
                         <div class="d-table m-auto">
-                            <img id="main-logo" class="d-inline-block align-top mr-1" style="max-width: 25px;" src="/images/shards-dashboards-logo.svg" alt="Shards Dashboard">
-                            <span class="d-none d-md-inline ml-1">Big Bowl</span>
+                            <img id="main-logo" class="d-inline-block align-top mr-1" style="max-width: 45px;" href="/index.html" src="/billeder/Logo.png" alt="Shards Dashboard">
                         </div>
                     </a>
-                    <a class="toggle-sidebar d-sm-inline d-md-none d-lg-none">
-                        <i class="material-icons">&#xE5C4;</i>
                     </a>
                 </nav>
             </div>
@@ -84,7 +36,7 @@
                             <i class="fas fa-search"></i>
                         </div>
                     </div>
-                    <input class="navbar-search form-control" type="text" placeholder="Search for something..." aria-label="Search"> </div>
+                </div>
             </form>
             <div class="nav-wrapper">
                 <ul class="nav flex-column">
@@ -109,17 +61,17 @@
                     <li class="nav-item">
                         <a class="nav-link " th:href="@{'/mad'}">
                             <i class="material-icons">table_chart</i>
-                            <span>Resturanter</span>
+                            <span>Resturant</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " th:href="@{'/kunder'}">
+                        <a class="nav-link" th:href="@{'/kunder'}">
                             <i class="material-icons">person</i>
                             <span>Kunder</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" th:href="@{'/equipment'}">
+                        <a class="nav-link " th:href="@{'/equipment'}">
                             <i class="material-icons">person</i>
                             <span>Udstyr</span>
                         </a>
@@ -131,7 +83,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " th:href="@{'/plan'}">
+                        <a class="nav-link active" th:href="@{'/plan'}">
                             <i class="material-icons">person</i>
                             <span>Vagtplan</span>
                         </a>
@@ -156,7 +108,7 @@
                     <div class="page-header row no-gutters py-4">
                         <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
                             <span class="text-uppercase page-subtitle"></span>
-                            <h3 class="page-title">Udstyr</h3>
+                            <h3 class="page-title">Vagtplan</h3>
                         </div>
                     </div>
                     <!-- End Page Header -->
@@ -165,31 +117,73 @@
                         <div class="col">
                             <div class="card card-small mb-4">
                                 <div class="card-header border-bottom">
-                                    <h6 class="m-0">Rediger Airhockey</h6>
+                                    <b class="m-0">Vagtplan</b>
                                 </div>
                                 <div class="card-body p-0 pb-3 text-center">
-                                    <form th:action="@{${airhockeytables.airhockeyTablesId}}" method="post">
-                                        <input hidden name="airhockeyTableId" th:value="${airhockeytables.airhockeyTablesId}"><br>
-                                        <label>Status</label>
-                                        <input type="text" name="status" th:value="${airhockeytables.status}"><br>
-                                          <label>Beskrivelse</label>
-                                        <input type="text" name="description" th:value="${airhockeytables.description}"><br>
-                                        <input type="submit" value="Opdater">
-                                    </form>
+                                    <table class="table mb-0" id="tabel">
+                                        <thead class="bg-light">
+                                        <tr>
+                                            <th scope="col" class="border-0">Mandag</th>
+                                            <th scope="col" class="border-0">Tirsdag</th>
+                                            <th scope="col" class="border-0">Onsdag</th>
+                                            <th scope="col" class="border-0">Torsdag</th>
+                                            <th scope="col" class="border-0">Fredag</th>
+                                            <th scope="col" class="border-0">Lørdag</th>
+                                            <th scope="col" class="border-0">Søndag</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>Frederik</td>
+                                            <td>Tessa</td>
+                                            <td>Fatima</td>
+                                            <td>Andreas</td>
+                                            <td>Magnus</td>
+                                            <td>Rasmus</td>
+                                            <td>Pia</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Abdulkadir</td>
+                                            <td>Ahmed</td>
+                                            <td>Mohammad</td>
+                                            <td>Jerry</td>
+                                            <td>Braunau</td>
+                                            <td>Juan</td>
+                                            <td>Lak</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Shakir</td>
+                                            <td>Chen</td>
+                                            <td>Nathan</td>
+                                            <td>Rofus</td>
+                                            <td>Maustain</td>
+                                            <td>Ismir</td>
+                                            <td>Jemilla</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Angela</td>
+                                            <td>Nicole</td>
+                                            <td>Adriana</td>
+                                            <td>Mia Macova</td>
+                                            <td>Mia Khalifa</td>
+                                            <td>Jordi El Ninjo</td>
+                                            <td>Torben Søndergaard</td></ts>
+                                        </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- End Default Light Table -->
-                    <!-- Default Dark Table -->
-                    <!-- End Default Dark Table -->
                 </div>
-
         </main>
     </div>
 </div>
+
+
+
 <div class="promo-popup animated">
-    <a href="http://bit.ly/shards-dashboard-pro" class="pp-cta extra-action">
+    <a href="https://bit.ly/shards-dashboard-pro" class="pp-cta extra-action">
         <img src="https://dgc2qnsehk7ta.cloudfront.net/uploads/sd-blog-promo-2.jpg"> </a>
 
 
