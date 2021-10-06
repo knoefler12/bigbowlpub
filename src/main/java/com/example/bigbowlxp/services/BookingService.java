@@ -1,9 +1,6 @@
 package com.example.bigbowlxp.services;
 
-import com.example.bigbowlxp.models.Activity;
-import com.example.bigbowlxp.models.AirHockeyTable;
-import com.example.bigbowlxp.models.Beverage;
-import com.example.bigbowlxp.models.Booking;
+import com.example.bigbowlxp.models.*;
 import com.example.bigbowlxp.repositories.BookingRepo;
 import com.example.bigbowlxp.repositories.EquipmentRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +28,7 @@ public class BookingService {
     public List<Booking> fetchAirHockeyTableBooking(){
         return bookingRepo.fetchAirHockeyTableBooking();
     }
+
     public List<Booking> fetchBowlingBooking(){
         return bookingRepo.fetchBowlingBooking();
     }
@@ -51,11 +49,11 @@ public class BookingService {
         return bookingRepo;
     }
 
-    public double priceCalculator(Booking booking, ArrayList<Beverage> beverages){
+    public double priceCalculator(Booking booking){
 
         double price = 0;
-        for(Beverage b : beverages){
-            price += b.getPrice();
+        for(BookingBeverage bookingBeverage : booking.getBeverages()){
+            price += bookingBeverage.getPrice() * bookingBeverage.getAmount();
         }
         if(booking.getActivity().equals(Activity.BOWLING)){
             price += 300 * booking.getDuration();

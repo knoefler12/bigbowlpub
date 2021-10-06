@@ -1,6 +1,7 @@
 package com.example.bigbowlxp.controllers;
 
 import com.example.bigbowlxp.models.Activity;
+import com.example.bigbowlxp.models.Beverage;
 import com.example.bigbowlxp.models.Booking;
 import com.example.bigbowlxp.services.BookingService;
 import com.example.bigbowlxp.services.CustomerService;
@@ -10,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -17,6 +19,7 @@ import java.util.List;
 public class BookingController {
 
     BookingService bookingService;
+
 
     public BookingService getBookingService() {
         return bookingService;
@@ -67,21 +70,49 @@ public class BookingController {
 
     @GetMapping("/airhockeytablesbookings")
     public String fetchAirHockeyTables(Model model){
-        model.addAttribute("airhockeytables", bookingService.fetchAirHockeyTableBooking());
+
+        List<Booking> bookings = bookingService.fetchAirHockeyTableBooking();
+        List<Double> bookingPrices = new ArrayList<>();
+
+        for(Booking booking : bookings){
+            bookingPrices.add(bookingService.priceCalculator(booking));
+        }
+
+        model.addAttribute("airhockeytables", bookings);
+        model.addAttribute("bookingPrices", bookingPrices);
+
         return "hockeyBookings.html";
     }
 
     @GetMapping("/bowlingbookings")
     public String fetchBowlingBookings(Model model){
-        model.addAttribute("bowlingBookings", bookingService.fetchBowlingBooking());
+
+        List<Booking> bookings = bookingService.fetchBowlingBooking();
+        List<Double> bookingPrices = new ArrayList<>();
+
+        for(Booking booking : bookings){
+            bookingPrices.add(bookingService.priceCalculator(booking));
+        }
+
+        model.addAttribute("bowlingBookings", bookings);
+        model.addAttribute("bookingPrices", bookingPrices);
+
         return "bowlingBookings.html";
     }
 
     @GetMapping("/restaurantbookings")
     public String fetchRestaurantBookings(Model model){
-        model.addAttribute("restaurantBookings", bookingService.fetchRestaurantBooking());
+
+        List<Booking> bookings = bookingService.fetchRestaurantBooking();
+        List<Double> bookingPrices = new ArrayList<>();
+
+        for(Booking booking : bookings){
+            bookingPrices.add(bookingService.priceCalculator(booking));
+        }
+
+        model.addAttribute("restaurantBookings", bookings);
+        model.addAttribute("bookingPrices", bookingPrices);
+        
         return "restaurantBookings.html";
     }
-
-
 }
