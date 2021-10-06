@@ -83,23 +83,5 @@ public class BookingController {
         return "restaurantBookings.html";
     }
 
-    @PostMapping("/bookingByDay/{type}")
-    public String fetchBookingByDay(@RequestBody String stringDay, @PathVariable int type, Model model) {
-        LocalDate day = LocalDate.parse(stringDay.substring(4));
-        if (type == 1) {
-            model.addAttribute("bookings",bookingService.fetchBookingByDay(day, Activity.BOWLING));
-            return "bowlingBookings.html";
-        }
-        if (type == 2) {
-            model.addAttribute("bookings", bookingService.fetchBookingByDay(day,Activity.AIRHOCKEY));
-            return "hockeyBookings.html";
-        }
-        if (type == 3) {
-            model.addAttribute("bookings", bookingService.fetchBookingByDay(day,Activity.RESTAURANT));
-            return "restaurantBookings.html";
-        }
-        return "index.html";
-    }
-
 
 }

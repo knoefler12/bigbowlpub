@@ -17,35 +17,16 @@ import java.util.List;
 @Service
 public class BookingService {
 
-    public List<Booking> fetchBookingByDay(LocalDate day, Activity activity) {
-        return bookingRepo.fetchBookingByDay(day, activity);
-    }
-
     private BookingRepo bookingRepo;
 
-    @Autowired
-    public void setBookingRepo(BookingRepo bookingRepo) {
-        this.bookingRepo = bookingRepo;
-    }
-
-    public BookingRepo getBookingRepo() {
-        return bookingRepo;
-    }
-
     public void createBooking(Booking b){
-
-
-
-
      bookingRepo.createBooking(b);
-
     }
 
-
-    public void deleteBooking(int id){
-
+    public void deleteBooking(int id) {
     bookingRepo.deleteBooking(id);
     }
+
     public List<Booking> fetchAirHockeyTableBooking(){
         return bookingRepo.fetchAirHockeyTableBooking();
     }
@@ -55,16 +36,19 @@ public class BookingService {
     public List<Booking> fetchRestaurantBooking(){
         return bookingRepo.fetchRestaurantBooking();
     }
-
     public void deleteJoinedBooking(int id){
     bookingRepo.deleteJoinedBookings(id);
     }
-/*
-    public void fetchBookingById(int id){
-        bookingRepo.fetchBookingById(id);
-    }
 
- */
+
+@Autowired
+public void setBookingRepo(BookingRepo bookingRepo) {
+    this.bookingRepo = bookingRepo;
+}
+
+    public BookingRepo getBookingRepo() {
+        return bookingRepo;
+    }
 
 
 }

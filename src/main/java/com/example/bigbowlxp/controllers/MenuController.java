@@ -1,6 +1,7 @@
 package com.example.bigbowlxp.controllers;
 
 import com.example.bigbowlxp.models.Menu;
+import com.example.bigbowlxp.services.BeverageService;
 import com.example.bigbowlxp.services.MenuService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,18 +16,12 @@ public class MenuController {
 
     private MenuService menuService;
 
-    @Autowired
-    public void setMenuService(MenuService menuService) {
-        this.menuService = menuService;
-    }
-
-    public MenuService getMenuService() {
-        return menuService;
-    }
+    private BeverageService beverageService;
 
     @GetMapping("/mad")
     public String showFood(Model foodModel){
         foodModel.addAttribute("Menu", menuService.fetchMenu());
+        foodModel.addAttribute("beverages", beverageService.fetchBeverages());
         return "mad.html";
     }
 
@@ -35,4 +30,22 @@ public class MenuController {
         menuService.changeFoodPrice(menu, id);
         return "redirect:/mad";
     }
+
+    public BeverageService getBeverageService() {
+        return beverageService;
+    }
+
+    @Autowired
+    public void setBeverageService(BeverageService beverageService) {
+        this.beverageService = beverageService;
+    }
+
+    @Autowired
+    public void setMenuService(MenuService menuService) {
+        this.menuService = menuService;
+    }
+
+    public MenuService getMenuService() {
+        return menuService;
+        }
 }
