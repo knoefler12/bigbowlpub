@@ -1,6 +1,7 @@
 package com.example.bigbowlxp.controllers;
 
 import com.example.bigbowlxp.models.Activity;
+import com.example.bigbowlxp.models.Beverage;
 import com.example.bigbowlxp.models.Booking;
 import com.example.bigbowlxp.services.BookingService;
 import com.example.bigbowlxp.services.CustomerService;
@@ -10,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -17,6 +19,7 @@ import java.util.List;
 public class BookingController {
 
     BookingService bookingService;
+
 
     public BookingService getBookingService() {
         return bookingService;
