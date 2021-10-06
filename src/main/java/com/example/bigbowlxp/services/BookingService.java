@@ -42,10 +42,10 @@ public class BookingService {
     }
 
 
-    public void deleteBooking(int id){
-
+    public void deleteBooking(int id) {
     bookingRepo.deleteBooking(id);
     }
+
     public List<Booking> fetchAirHockeyTableBooking(){
         return bookingRepo.fetchAirHockeyTableBooking();
     }
@@ -60,14 +60,15 @@ public class BookingService {
     bookingRepo.deleteJoinedBookings(id);
     }
 
-    public List<Booking> fetchBookingById(String activity){
-        return bookingRepo.fetchBookingByActivity(activity);
-/*
-    public void fetchBookingById(int id){
-        bookingRepo.fetchBookingById(id);
-    }
 
- */
+@Autowired
+public void setBookingRepo(BookingRepo bookingRepo) {
+    this.bookingRepo = bookingRepo;
+}
+
+    public BookingRepo getBookingRepo() {
+        return bookingRepo;
+    }
 
 
 }
