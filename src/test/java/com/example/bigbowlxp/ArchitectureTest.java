@@ -34,6 +34,9 @@ public class ArchitectureTest {
     @Autowired
     private BookingController bookingController;
 
+    @Autowired
+    private BeverageController beverageController;
+
 
     @Test
     void bowlingArchitectureTest() {
@@ -88,6 +91,9 @@ public class ArchitectureTest {
         MenuService menuService = menuController.getMenuService();
         assertNotNull(menuService);
 
+        BeverageService beverageService = menuController.getBeverage();
+        assertNotNull(beverageService);
+
         MenuRepo menuRepo = menuService.getMenuRepo();
         assertNotNull(menuRepo);
 
@@ -120,6 +126,20 @@ public class ArchitectureTest {
         assertNotNull(bookingRepo);
 
         JdbcTemplate template = bookingRepo.getTemplate();
+        assertNotNull(template);
+    }
+
+    @Test
+    void beverageArchitectureTest(){
+        assertNotNull(beverageController);
+
+        BeverageService beverageService = beverageController.getBeverageService();
+        assertNotNull(beverageService);
+
+        BeverageRepo beverageRepo = beverageService.getBeverageRepo();
+        assertNotNull(beverageRepo);
+
+        JdbcTemplate template = beverageRepo.getTemplate();
         assertNotNull(template);
     }
 }

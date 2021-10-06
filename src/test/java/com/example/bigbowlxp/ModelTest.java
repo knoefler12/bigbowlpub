@@ -105,4 +105,19 @@ public class ModelTest {
         assertThat(equipment.getAmount() == 6);
 
     }
+
+    @Test
+    void beverageTest(){
+        Beverage beverage = new Beverage();
+        beverage.setBeverageId(1);
+        beverage.setName("Pisswasser");
+        beverage.setPrice(40.0);
+
+        assertThat(beverage.getBeverageId() == 1);
+        assertThat(beverage.getName().equals("Pisswasser"));
+        assertThat(beverage.getPrice() == 40.0);
+
+
+    }
+
 }
