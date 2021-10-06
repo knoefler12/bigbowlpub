@@ -82,19 +82,4 @@ public class BookingController {
         model.addAttribute("restaurantBookings", bookingService.fetchRestaurantBooking());
         return "restaurantBookings.html";
     }
-
-    @GetMapping("/redigerrestaurantbookings/{id}")
-    public String editRestaurantBooking(@PathVariable int id){
-        return "eri";
-    }
-
-    @GetMapping("/redigerairhockeytablesbooking/{id}")
-    public String editAirhockeyBooking(@PathVariable int id){
-        return "eri";
-    }
-
-    @GetMapping("/redigerbowlingbookings/{id}")
-    public String editBowlingBooking(@PathVariable int id){
-        return "eri";
-    }
 }

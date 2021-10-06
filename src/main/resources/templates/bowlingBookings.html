@@ -131,13 +131,6 @@
                       <td th:text="${bowlingBookings.date}"/>
                       <td th:text="${bowlingBookings.startTime}" />
                       <td th:text="${bowlingBookings.duration}" />
-                      <td>
-                        <a th:href="@{'/redigerbowlingbookings/'+${bowlingBookings.bookingId}}">
-                          <button  type="button" style="background-color: #008000; border-color: #008000" class="btn btn-primary">
-                            Rediger
-                          </button>
-                        </a>
-                      </td>
                     </tr>
                     </tbody>
                   </table>
