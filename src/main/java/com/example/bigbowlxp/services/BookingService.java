@@ -2,7 +2,6 @@ package com.example.bigbowlxp.services;
 
 import com.example.bigbowlxp.models.Activity;
 import com.example.bigbowlxp.models.AirHockeyTable;
-import com.example.bigbowlxp.models.Beverage;
 import com.example.bigbowlxp.models.Booking;
 import com.example.bigbowlxp.repositories.BookingRepo;
 import com.example.bigbowlxp.repositories.EquipmentRepo;
@@ -18,35 +17,16 @@ import java.util.List;
 @Service
 public class BookingService {
 
-    public List<Booking> fetchBookingByDay(LocalDate day, Activity activity) {
-        return bookingRepo.fetchBookingByDay(day, activity);
-    }
-
     private BookingRepo bookingRepo;
 
-    @Autowired
-    public void setBookingRepo(BookingRepo bookingRepo) {
-        this.bookingRepo = bookingRepo;
-    }
-
-    public BookingRepo getBookingRepo() {
-        return bookingRepo;
-    }
-
     public void createBooking(Booking b){
-
-
-
-
      bookingRepo.createBooking(b);
-
     }
 
-
-    public void deleteBooking(int id){
-
+    public void deleteBooking(int id) {
     bookingRepo.deleteBooking(id);
     }
+
     public List<Booking> fetchAirHockeyTableBooking(){
         return bookingRepo.fetchAirHockeyTableBooking();
     }
@@ -56,29 +36,18 @@ public class BookingService {
     public List<Booking> fetchRestaurantBooking(){
         return bookingRepo.fetchRestaurantBooking();
     }
-
     public void deleteJoinedBooking(int id){
     bookingRepo.deleteJoinedBookings(id);
     }
-/*
-    public void fetchBookingById(int id){
-        bookingRepo.fetchBookingById(id);
-    }
 
- *
- */
-    public double priceCalculator(Booking booking, ArrayList<Beverage> beverages){
 
-        double price = 0;
-        for(Beverage b : beverages){
-            price += b.getPrice();
-        }
-        if(booking.getActivity().equals(Activity.BOWLING)){
-            price += 300 * booking.getDuration();
-        }else if(booking.getActivity().equals(Activity.AIRHOCKEY)){
-            price += 150 * booking.getDuration();
-        }
-        return price;
+@Autowired
+public void setBookingRepo(BookingRepo bookingRepo) {
+    this.bookingRepo = bookingRepo;
+}
+
+    public BookingRepo getBookingRepo() {
+        return bookingRepo;
     }
 
 
