@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class PriceCalculatorTests {
     @Autowired
     BookingService bookingService;
-
+/*
     @Test
     void calculatePriceTest(){
         Booking booking = new Booking();
@@ -28,4 +28,6 @@ public class PriceCalculatorTests {
         }};
         assertEquals(710, bookingService.priceCalculator(booking, beverages));
     }
+
+ */
 }
