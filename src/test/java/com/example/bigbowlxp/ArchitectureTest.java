@@ -91,7 +91,7 @@ public class ArchitectureTest {
         MenuService menuService = menuController.getMenuService();
         assertNotNull(menuService);
 
-        BeverageService beverageService = menuController.getBeverage();
+        BeverageService beverageService = menuController.getBeverageService();
         assertNotNull(beverageService);
 
         MenuRepo menuRepo = menuService.getMenuRepo();

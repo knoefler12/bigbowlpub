@@ -38,7 +38,7 @@ public class BeverageRepo {
         jdbcTemplate.update(sql, price, id);
     }
 
-    public JdbcTemplate getJdbcTemplate() {
+    public JdbcTemplate getTemplate() {
         return jdbcTemplate;
     }
 
