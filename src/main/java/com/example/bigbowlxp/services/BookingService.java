@@ -2,6 +2,7 @@ package com.example.bigbowlxp.services;
 
 import com.example.bigbowlxp.models.Activity;
 import com.example.bigbowlxp.models.AirHockeyTable;
+import com.example.bigbowlxp.models.Beverage;
 import com.example.bigbowlxp.models.Booking;
 import com.example.bigbowlxp.repositories.BookingRepo;
 import com.example.bigbowlxp.repositories.EquipmentRepo;
@@ -42,12 +43,26 @@ public class BookingService {
 
 
 @Autowired
-public void setBookingRepo(BookingRepo bookingRepo) {
+    public void setBookingRepo(BookingRepo bookingRepo) {
     this.bookingRepo = bookingRepo;
 }
 
     public BookingRepo getBookingRepo() {
         return bookingRepo;
+    }
+
+    public double priceCalculator(Booking booking, ArrayList<Beverage> beverages){
+
+        double price = 0;
+        for(Beverage b : beverages){
+            price += b.getPrice();
+        }
+        if(booking.getActivity().equals(Activity.BOWLING)){
+            price += 300 * booking.getDuration();
+        }else if(booking.getActivity().equals(Activity.AIRHOCKEY)){
+            price += 150 * booking.getDuration();
+        }
+        return price;
     }
 
 
