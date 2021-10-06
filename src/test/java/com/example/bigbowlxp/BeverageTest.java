@@ -31,7 +31,7 @@ public class BeverageTest {
         beverage.setName("testnamethatisnevergoingtobeused");
         beverage.setPrice(0.5);
 
-        String sql = "SELECT * FROM beverages WHERE name='testnamethatisnevergoingtobeused' AND price=0.5";
+        String sql = "SELECT * FROM beverages WHERE name='testnamethatisnevergoingtobeused'";
 
         Beverage dbBeverage;
 
@@ -48,8 +48,13 @@ public class BeverageTest {
         assertThat(beverage.getName().equals(dbBeverage.getName()));
         assertThat(beverage.getPrice() == dbBeverage.getPrice());
 
+        beverage.setPrice(123456.3);
+        beverageController.getBeverageService().updatePrice(123456.3, dbBeverage.getBeverageId());
 
+        dbBeverage = template.query(sql, new BeanPropertyRowMapper<>(Beverage.class)).get(0);
 
+        assertThat(beverage.getPrice() == dbBeverage.getPrice());
+        assertThat(beverage.getName().equals(dbBeverage.getName()));
 
         template.update("DELETE FROM beverages WHERE name = 'testnamethatisnevergoingtobeused'");
 
