@@ -32,7 +32,8 @@ public class CalendarSortTest {
         booking.setLastName("Biil");
         booking.setDuration(10);
         booking.setPhone("qwerty");
-        booking.setStartTime(LocalDateTime.of(2020,10,10,5,10).toString());
+        booking.setDate(LocalDate.of(2020,10,10));
+        booking.setStartTime("12:45");
 
         bookingController.getBookingService().createBooking(booking);
 
