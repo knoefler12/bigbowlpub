@@ -19,7 +19,6 @@ public class BeverageController {
 
     @PostMapping("/createBeverage")
     public String createBeverage(@ModelAttribute Beverage beverage) {
-        System.out.println(beverage.getPrice());
         beverageService.createBeverage(beverage);
         return "redirect:/mad";
     }
