@@ -39,13 +39,13 @@ public class BeverageRepo {
     }
 
     public void updateBeverage(Beverage b){
-        String sql = "UPDATE beverages   SET name = ?, price = ? WHERE equipment_id = ?";
+        String sql = "UPDATE beverages   SET name = ?, price = ? WHERE beverage_id = ?";
         jdbcTemplate.update(sql, b.getName(), b.getPrice(), b.getBeverageId());
 
     }
 
     public Beverage findBeverageById(int beverageId){
-        String sql = "SELECT * FROM beverage WHERE beverage_id = ?";
+        String sql = "SELECT * FROM beverages WHERE beverage_id = ?";
         RowMapper<Beverage> rowMapper = new BeanPropertyRowMapper<>(Beverage.class);
         Beverage b = jdbcTemplate.queryForObject(sql, rowMapper, beverageId);
         return b;
