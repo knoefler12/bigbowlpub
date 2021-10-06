@@ -70,19 +70,49 @@ public class BookingController {
 
     @GetMapping("/airhockeytablesbookings")
     public String fetchAirHockeyTables(Model model){
-        model.addAttribute("airhockeytables", bookingService.fetchAirHockeyTableBooking());
+
+        List<Booking> bookings = bookingService.fetchAirHockeyTableBooking();
+        List<Double> bookingPrices = new ArrayList<>();
+
+        for(Booking booking : bookings){
+            bookingPrices.add(bookingService.priceCalculator(booking));
+        }
+
+        model.addAttribute("airhockeytables", bookings);
+        model.addAttribute("bookingPrices", bookingPrices);
+
         return "hockeyBookings.html";
     }
 
     @GetMapping("/bowlingbookings")
     public String fetchBowlingBookings(Model model){
-        model.addAttribute("bowlingBookings", bookingService.fetchBowlingBooking());
+
+        List<Booking> bookings = bookingService.fetchBowlingBooking();
+        List<Double> bookingPrices = new ArrayList<>();
+
+        for(Booking booking : bookings){
+            bookingPrices.add(bookingService.priceCalculator(booking));
+        }
+
+        model.addAttribute("bowlingBookings", bookings);
+        model.addAttribute("bookingPrices", bookingPrices);
+
         return "bowlingBookings.html";
     }
 
     @GetMapping("/restaurantbookings")
     public String fetchRestaurantBookings(Model model){
-        model.addAttribute("restaurantBookings", bookingService.fetchRestaurantBooking());
+
+        List<Booking> bookings = bookingService.fetchRestaurantBooking();
+        List<Double> bookingPrices = new ArrayList<>();
+
+        for(Booking booking : bookings){
+            bookingPrices.add(bookingService.priceCalculator(booking));
+        }
+
+        model.addAttribute("restaurantBookings", bookings);
+        model.addAttribute("bookingPrices", bookingPrices);
+        
         return "restaurantBookings.html";
     }
 }
