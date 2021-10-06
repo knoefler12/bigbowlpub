@@ -22,6 +22,7 @@ public class Booking {
     private String date;
     private String startTime;
     private int duration;
+    private List<BookingBeverage> beverages;
 
 
 
@@ -100,4 +101,11 @@ public class Booking {
         this.duration = duration;
     }
 
+    public List<BookingBeverage> getBeverages() {
+        return beverages;
+    }
+
+    public void setBeverages(List<BookingBeverage> beverages) {
+        this.beverages = beverages;
+    }
 }

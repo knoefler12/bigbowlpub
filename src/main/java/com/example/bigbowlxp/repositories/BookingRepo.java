@@ -3,6 +3,7 @@ package com.example.bigbowlxp.repositories;
 import com.example.bigbowlxp.models.Activity;
 import com.example.bigbowlxp.models.AirHockeyTable;
 import com.example.bigbowlxp.models.Booking;
+import com.example.bigbowlxp.models.BookingBeverage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -67,7 +68,11 @@ public class BookingRepo{
                 "WHERE activity = 'AIRHOCKEY'" +
                 "ORDER BY date, start_time";
         RowMapper<Booking> bookingRowMapper = new BeanPropertyRowMapper<>(Booking.class);
-        return jdbcTemplate.query(sql, bookingRowMapper);
+        List<Booking> list = jdbcTemplate.query(sql, bookingRowMapper);
+        for(Booking booking : list){
+            booking.setBeverages(fetchBookingBeveragesByBookingId(booking.getBookingId()));
+        }
+        return list;
     }
 
     public List<Booking> fetchBowlingBooking(){
@@ -77,7 +82,11 @@ public class BookingRepo{
                 "WHERE activity = 'BOWLING'" +
                 "ORDER BY date, start_time";
         RowMapper<Booking> bookingRowMapper = new BeanPropertyRowMapper<>(Booking.class);
-        return jdbcTemplate.query(sql, bookingRowMapper);
+        List<Booking> list = jdbcTemplate.query(sql, bookingRowMapper);
+        for(Booking booking : list){
+            booking.setBeverages(fetchBookingBeveragesByBookingId(booking.getBookingId()));
+        }
+        return list;
     }
 
     public List<Booking> fetchRestaurantBooking(){
@@ -88,6 +97,18 @@ public class BookingRepo{
                 "ORDER BY date, start_time";
         RowMapper<Booking> bookingRowMapper = new BeanPropertyRowMapper<>(Booking.class);
         List<Booking> list = jdbcTemplate.query(sql, bookingRowMapper);
+        for(Booking booking : list){
+            booking.setBeverages(fetchBookingBeveragesByBookingId(booking.getBookingId()));
+        }
+        return list;
+    }
+
+    public List<BookingBeverage> fetchBookingBeveragesByBookingId(int id){
+        String sql = "SELECT booking_id, beverage.beverage_id, name, price, amount FROM booking_beverages" +
+                "JOIN beverages" +
+                "WHERE booking_id = ?";
+        RowMapper<BookingBeverage> bookingBeverageRowMapper = new BeanPropertyRowMapper<>(BookingBeverage.class);
+        List<BookingBeverage> list = jdbcTemplate.query(sql, bookingBeverageRowMapper, id);
         return list;
     }
 }
