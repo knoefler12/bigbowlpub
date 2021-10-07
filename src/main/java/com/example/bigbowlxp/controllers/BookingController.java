@@ -101,8 +101,16 @@ public class BookingController {
                                         @RequestParam int sodaAmount,
                                         @RequestParam int beerAmount){
         Booking booking = bookingService.fetchBookingById(bookingId);
-        booking.getBeverages().get(0).setAmount(sodaAmount);
-        booking.getBeverages().get(1).setAmount(beerAmount);
+        try {
+            booking.getBeverages().get(0).setAmount(sodaAmount);
+        }catch(Exception e){
+            booking.getBeverages().add(new BookingBeverage(bookingId, 1, sodaAmount));
+        }
+        try {
+            booking.getBeverages().get(1).setAmount(beerAmount);
+        }catch (Exception e){
+            booking.getBeverages().add(new BookingBeverage(bookingId, 2, beerAmount));
+        }
         bookingService.editBookingBeverages(booking.getBeverages().get(0));
         bookingService.editBookingBeverages(booking.getBeverages().get(1));
 

@@ -19,6 +19,12 @@ public class BookingBeverage {
         this.amount = amount;
     }
 
+    public BookingBeverage(int bookingId, int beverageId, int amount) {
+        this.bookingId = bookingId;
+        this.beverageId = beverageId;
+        this.amount = amount;
+    }
+
     public int getBookingId() {
         return bookingId;
     }
