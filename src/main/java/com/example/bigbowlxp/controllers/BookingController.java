@@ -12,9 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @Controller
 public class BookingController {
@@ -101,6 +99,127 @@ public class BookingController {
                                         @RequestParam int sodaAmount,
                                         @RequestParam int beerAmount){
         Booking booking = bookingService.fetchBookingById(bookingId);
+        try{
+            booking.getBeverages();
+        }catch(Exception e){
+            booking.setBeverages(new List<BookingBeverage>() {
+                @Override
+                public int size() {
+                    return 0;
+                }
+
+                @Override
+                public boolean isEmpty() {
+                    return false;
+                }
+
+                @Override
+                public boolean contains(Object o) {
+                    return false;
+                }
+
+                @Override
+                public Iterator<BookingBeverage> iterator() {
+                    return null;
+                }
+
+                @Override
+                public Object[] toArray() {
+                    return new Object[0];
+                }
+
+                @Override
+                public <T> T[] toArray(T[] a) {
+                    return null;
+                }
+
+                @Override
+                public boolean add(BookingBeverage bookingBeverage) {
+                    return false;
+                }
+
+                @Override
+                public boolean remove(Object o) {
+                    return false;
+                }
+
+                @Override
+                public boolean containsAll(Collection<?> c) {
+                    return false;
+                }
+
+                @Override
+                public boolean addAll(Collection<? extends BookingBeverage> c) {
+                    return false;
+                }
+
+                @Override
+                public boolean addAll(int index, Collection<? extends BookingBeverage> c) {
+                    return false;
+                }
+
+                @Override
+                public boolean removeAll(Collection<?> c) {
+                    return false;
+                }
+
+                @Override
+                public boolean retainAll(Collection<?> c) {
+                    return false;
+                }
+
+                @Override
+                public void clear() {
+
+                }
+
+                @Override
+                public BookingBeverage get(int index) {
+                    return null;
+                }
+
+                @Override
+                public BookingBeverage set(int index, BookingBeverage element) {
+                    return null;
+                }
+
+                @Override
+                public void add(int index, BookingBeverage element) {
+
+                }
+
+                @Override
+                public BookingBeverage remove(int index) {
+                    return null;
+                }
+
+                @Override
+                public int indexOf(Object o) {
+                    return 0;
+                }
+
+                @Override
+                public int lastIndexOf(Object o) {
+                    return 0;
+                }
+
+                @Override
+                public ListIterator<BookingBeverage> listIterator() {
+                    return null;
+                }
+
+                @Override
+                public ListIterator<BookingBeverage> listIterator(int index) {
+                    return null;
+                }
+
+                @Override
+                public List<BookingBeverage> subList(int fromIndex, int toIndex) {
+                    return null;
+                }
+            });
+        }
+
         try {
             booking.getBeverages().get(0).setAmount(sodaAmount);
         }catch(Exception e){
