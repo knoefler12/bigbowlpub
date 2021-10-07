@@ -42,7 +42,9 @@ public class BookingRepo{
                 "JOIN sql4438617.customers USING (customer_id) " +
                 "WHERE booking_id = ?";
         RowMapper<Booking> bookingRowMapper = new BeanPropertyRowMapper<>(Booking.class);
-        return jdbcTemplate.queryForObject(sql, bookingRowMapper, id);
+        Booking booking = jdbcTemplate.queryForObject(sql, bookingRowMapper, id);
+        booking.setBeverages(fetchBookingBeveragesByBookingId(id));
+        return booking;
     }
 
     public void deleteBooking(int id){
