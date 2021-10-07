@@ -146,14 +146,13 @@
                        <td>
 
                          <div class="form-group">
-                           <input name="sodaAmount" type="number" id="sodaAmount" class="form-control">
+                           <input th:placeholder="${bowlingBookings.beverages.get(0).amount}" name="sodaAmount" type="number" id="sodaAmount" class="form-control">
                          </div>
-
                        </td>
 
                       <td>
                         <div class="form-group">
-                          <input name="beerAmount" type="number" id="beerAmount" class="form-control">
+                          <input th:placeholder="${bowlingBookings.beverages.get(1).amount}" name="beerAmount" type="number" id="beerAmount" class="form-control">
                         </div>
                        </td>
 
@@ -173,11 +172,7 @@
               </div>
             </div>
           </div>
-          <!-- End Default Light Table -->
-          <!-- Default Dark Table -->
-          <!-- End Default Dark Table -->
         </div>
-
     </main>
   </div>
 </div>
