@@ -23,6 +23,7 @@ public class Booking {
     private String startTime;
     private int duration;
     private List<BookingBeverage> beverages;
+    private double totalPrice;
 
 
 
@@ -107,5 +108,24 @@ public class Booking {
 
     public void setBeverages(List<BookingBeverage> beverages) {
         this.beverages = beverages;
+    }
+
+    public double getTotalPrice() {
+        return priceCalculator();
+    }
+
+
+    public double priceCalculator(){
+
+        double price = 0;
+        for(BookingBeverage bookingBeverage : beverages){
+            price += bookingBeverage.getPrice() * bookingBeverage.getAmount();
+        }
+        if(activity.equals(Activity.BOWLING)){
+            price += 300 * duration;
+        }else if(activity.equals(Activity.AIRHOCKEY)){
+            price += 150 * duration;
+        }
+        return price;
     }
 }

@@ -49,19 +49,7 @@ public class BookingService {
         return bookingRepo;
     }
 
-    public double priceCalculator(Booking booking){
 
-        double price = 0;
-        for(BookingBeverage bookingBeverage : booking.getBeverages()){
-            price += bookingBeverage.getPrice() * bookingBeverage.getAmount();
-        }
-        if(booking.getActivity().equals(Activity.BOWLING)){
-            price += 300 * booking.getDuration();
-        }else if(booking.getActivity().equals(Activity.AIRHOCKEY)){
-            price += 150 * booking.getDuration();
-        }
-        return price;
-    }
 
 
 }
