@@ -233,6 +233,6 @@ public class BookingController {
         bookingService.editBookingBeverages(booking.getBeverages().get(0));
         bookingService.editBookingBeverages(booking.getBeverages().get(1));
 
-        return "redirect:/bowlingBookings";
+        return "redirect:/bowlingbookings";
     }
 }
