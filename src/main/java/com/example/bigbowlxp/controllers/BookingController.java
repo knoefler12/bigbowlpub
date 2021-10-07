@@ -72,14 +72,7 @@ public class BookingController {
     public String fetchAirHockeyTables(Model model){
 
         List<Booking> bookings = bookingService.fetchAirHockeyTableBooking();
-        List<Double> bookingPrices = new ArrayList<>();
-
-        for(Booking booking : bookings){
-            bookingPrices.add(bookingService.priceCalculator(booking));
-        }
-
-        model.addAttribute("airhockeytables", bookings);
-        model.addAttribute("bookingPrices", bookingPrices);
+        model.addAttribute("airHockeyBookings", bookings);
 
         return "hockeyBookings.html";
     }
@@ -88,14 +81,7 @@ public class BookingController {
     public String fetchBowlingBookings(Model model){
 
         List<Booking> bookings = bookingService.fetchBowlingBooking();
-        List<Double> bookingPrices = new ArrayList<>();
-
-        for(Booking booking : bookings){
-            bookingPrices.add(bookingService.priceCalculator(booking));
-        }
-
         model.addAttribute("bowlingBookings", bookings);
-        model.addAttribute("bookingPrices", bookingPrices);
 
         return "bowlingBookings.html";
     }
@@ -104,15 +90,13 @@ public class BookingController {
     public String fetchRestaurantBookings(Model model){
 
         List<Booking> bookings = bookingService.fetchRestaurantBooking();
-        List<Double> bookingPrices = new ArrayList<>();
-
-        for(Booking booking : bookings){
-            bookingPrices.add(bookingService.priceCalculator(booking));
-        }
-
         model.addAttribute("restaurantBookings", bookings);
-        model.addAttribute("bookingPrices", bookingPrices);
-        
+
         return "restaurantBookings.html";
+    }
+
+    @PostMapping("/bowlingBooking")
+    public String updateBowlingBookings(@ModelAttribute List<Booking> bookings){
+        return null;
     }
 }
