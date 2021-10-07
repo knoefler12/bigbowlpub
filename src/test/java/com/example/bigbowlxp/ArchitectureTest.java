@@ -1,5 +1,6 @@
 package com.example.bigbowlxp;
 
+/*
 import com.example.bigbowlxp.controllers.*;
 import com.example.bigbowlxp.repositories.*;
 import com.example.bigbowlxp.services.*;
@@ -143,3 +144,5 @@ public class ArchitectureTest {
         assertNotNull(template);
     }
 }
+
+ */

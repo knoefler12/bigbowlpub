@@ -128,6 +128,10 @@
                       <th scope="col" class="border-0">Dato</th>
                       <th scope="col" class="border-0">Starttid</th>
                       <th scope="col" class="border-0">Varighed</th>
+                      <th scope="col" class="border-0">Sodavand</th>
+                      <th scope="col" class="border-0">Øl</th>
+                      <th scope="col" class="border-0">Opdater</th>
+                      <th scope="col" class="border-0">Total Pris</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -137,6 +141,30 @@
                       <td th:text="${bowlingBookings.date}"/>
                       <td th:text="${bowlingBookings.startTime}" />
                       <td th:text="${bowlingBookings.duration}" />
+
+                       <td>
+                         <div class="form-group">
+                           <input name="sodaNAME" type="number" id="sodavand" class="form-control">
+                         </div>
+                       </td>
+
+                      <td>
+                        <div class="form-group">
+                          <input name="beerNAME" type="number" id="beer" class="form-control">
+                        </div>
+                       </td>
+
+                      <td>
+                      <a th:href="@{'/bowlingBookings/'+${bowlingBookings.bookingId}}">
+                        <button class="btn btn-primary" id="btn-warning" style="background-color: #FFA500; border-color: #FFA500">Opdater</button>
+                        <a/>
+                        </td>
+
+
+                      <td th:text="${bowlingBookings.totalPrice} + ' DKK'"/>
+
+
+
                     </tr>
                     </tbody>
                   </table>
