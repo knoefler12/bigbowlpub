@@ -96,7 +96,7 @@ public class BookingController {
     }
 
     @PostMapping("/bowlingBookings/{bookingId}")
-    public String updateBowlingBookings(@ModelAttribute List<Booking> bookings){
+    public String updateBowlingBookings(){
         return "redirect:/bowlingBookings.html";
     }
 }
