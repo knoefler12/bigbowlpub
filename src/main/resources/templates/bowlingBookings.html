@@ -142,29 +142,30 @@
                       <td th:text="${bowlingBookings.startTime}" />
                       <td th:text="${bowlingBookings.duration}" />
 
+                      <form th:action="@{'/bowlingBookings/'+${bowlingBookings.bookingId}}" method="GET">
                        <td>
+
                          <div class="form-group">
-                           <input name="sodaNAME" type="number" id="sodavand" class="form-control">
+                           <input name="sodaAmount" type="number" id="sodaAmount" class="form-control">
                          </div>
+
                        </td>
 
                       <td>
                         <div class="form-group">
-                          <input name="beerNAME" type="number" id="beer" class="form-control">
+                          <input name="beerAmount" type="number" id="beerAmount" class="form-control">
                         </div>
                        </td>
 
                       <td>
-                      <a th:href="@{'/bowlingBookings/'+${bowlingBookings.bookingId}}">
-                        <button class="btn btn-primary" id="btn-warning" style="background-color: #FFA500; border-color: #FFA500">Opdater</button>
-                        <a/>
-                        </td>
 
+                        <button type="submit" class="btn btn-primary" id="btn-warning" style="background-color: #FFA500; border-color: #FFA500">Opdater</button>
+
+
+                        </td>
+                      </form>
 
                       <td th:text="${bowlingBookings.totalPrice} + ' DKK'"/>
-
-
-
                     </tr>
                     </tbody>
                   </table>
