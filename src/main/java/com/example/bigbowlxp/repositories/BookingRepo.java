@@ -35,6 +35,16 @@ public class BookingRepo{
         jdbcTemplate.update(sql, b.getCustomer_id(), b.getActivity().toString(), b.getDate(), b.getStartTime(), b.getDuration());
 
     }
+
+    public Booking fetchBookingById(int id){
+        String sql = "SELECT booking_id, b.customer_id, first_name, last_name, phone, activity, date, start_time, duration " +
+                "FROM sql4438617.bookings b " +
+                "JOIN sql4438617.customers USING (customer_id) " +
+                "WHERE booking_id = ?";
+        RowMapper<Booking> bookingRowMapper = new BeanPropertyRowMapper<>(Booking.class);
+        return jdbcTemplate.queryForObject(sql, bookingRowMapper, id);
+    }
+
     public void deleteBooking(int id){
         String sql = "DELETE FROM booking_beverages WHERE bookingId = ?";
         jdbcTemplate.update(sql,id);

@@ -3,6 +3,7 @@ package com.example.bigbowlxp.controllers;
 import com.example.bigbowlxp.models.Activity;
 import com.example.bigbowlxp.models.Beverage;
 import com.example.bigbowlxp.models.Booking;
+import com.example.bigbowlxp.models.BookingBeverage;
 import com.example.bigbowlxp.services.BookingService;
 import com.example.bigbowlxp.services.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -95,8 +96,16 @@ public class BookingController {
         return "restaurantBookings.html";
     }
 
-    @PostMapping("/bowlingBookings/{bookingId}")
-    public String updateBowlingBookings(){
+    @GetMapping("/bowlingBookings/{bookingId}")
+    public String updateBowlingBookings(@PathVariable int bookingId,
+                                        @RequestParam int sodaAmount,
+                                        @RequestParam int beerAmount){
+        Booking booking = bookingService.fetchBookingById(bookingId);
+        booking.getBeverages().get(0).setAmount(sodaAmount);
+        booking.getBeverages().get(1).setAmount(beerAmount);
+        bookingService.editBookingBeverages(booking.getBeverages().get(0));
+        bookingService.editBookingBeverages(booking.getBeverages().get(1));
+
         return "redirect:/bowlingBookings.html";
     }
 }

@@ -21,6 +21,10 @@ public class BookingService {
      bookingRepo.createBooking(b);
     }
 
+    public Booking fetchBookingById(int id){
+        return bookingRepo.fetchBookingById(id);
+    }
+
     public void deleteBooking(int id) {
     bookingRepo.deleteBooking(id);
     }
@@ -47,6 +51,10 @@ public class BookingService {
 
     public BookingRepo getBookingRepo() {
         return bookingRepo;
+    }
+
+    public void editBookingBeverages(BookingBeverage bb){
+        bookingRepo.editBookingBeverages(bb);
     }
 
 
