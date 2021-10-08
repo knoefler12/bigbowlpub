@@ -26,10 +26,10 @@ public class BeverageRepo {
     }
 
     public void deleteBeverage(int id) {
-        String sql = "DELETE FROM booking_beverages WHERE beverageId = ?";
+        String sql = "DELETE FROM booking_beverages WHERE beverage_id = ?";
         jdbcTemplate.update(sql, id);
 
-        sql = "DELETE FROM beverages WHERE beverageId = ?";
+        sql = "DELETE FROM beverages WHERE beverage_id = ?";
         jdbcTemplate.update(sql, id);
     }
 
@@ -38,6 +38,18 @@ public class BeverageRepo {
         jdbcTemplate.update(sql, price, id);
     }
 
+    public void updateBeverage(Beverage b){
+        String sql = "UPDATE beverages   SET name = ?, price = ? WHERE beverage_id = ?";
+        jdbcTemplate.update(sql, b.getName(), b.getPrice(), b.getBeverageId());
+
+    }
+
+    public Beverage findBeverageById(int beverageId){
+        String sql = "SELECT * FROM beverages WHERE beverage_id = ?";
+        RowMapper<Beverage> rowMapper = new BeanPropertyRowMapper<>(Beverage.class);
+        Beverage b = jdbcTemplate.queryForObject(sql, rowMapper, beverageId);
+        return b;
+    }
     public JdbcTemplate getJdbcTemplate() {
         return jdbcTemplate;
     }

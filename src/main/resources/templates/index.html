@@ -26,7 +26,6 @@
                         <div class="d-table m-auto">
                             <img id="main-logo" class="d-inline-block align-top mr-1" style="max-width: 45px;"
                                  src="/billeder/Logo.png" alt="Shards Dashboard">
-
                         </div>
                     </a>
                     <a class="toggle-sidebar d-sm-inline d-md-none d-lg-none">
@@ -86,6 +85,12 @@
                         <a class="nav-link " th:href="@{'/createBooking'}">
                             <i class="material-icons">person</i>
                             <span>Lav en booking</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " th:href="@{'/plan'}">
+                            <i class="material-icons">person</i>
+                            <span>Vagtplan</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -184,7 +189,7 @@
                         </div>
                         <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
                             <div class="card card-small card-post card-post--1">
-                                <div class="card-post__image" style="background-image: url('/billeder/gladekunder.jpg');">
+                                <div class="card-post__image" style="background-image: url('/billeder/booking.jpg');">
                                     <div class="card-post__author d-flex">
                                     </div>
                                 </div>
@@ -194,22 +199,23 @@
                                     </h5>
 
                                 </div>
-                            </div>
                         </div>
                     </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                            <div class="card card-small card-post card-post--1">
+                                <div class="card-post__image" style="background-image: url('/billeder/gladmand.jpg');">
+                                    <div class="card-post__author d-flex">
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <a class="text-fiord-blue" href="plan">Vagtplan</a>
+                                    </h5>
+                                </div>
+                            </div>
                 </div>
-
-
         </main>
     </div>
-</div>
-<div class="promo-popup animated">
-    <a href="http://bit.ly/shards-dashboard-pro" class="pp-cta extra-action">
-        <img src="https://dgc2qnsehk7ta.cloudfront.net/uploads/sd-blog-promo-2.jpg"> </a>
-
-    <span class="up">
-          <i class="material-icons">keyboard_arrow_up</i>
-        </span>
 </div>
 <div class="pp-inner-content">
 </div>

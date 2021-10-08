@@ -36,6 +36,12 @@ public class BeverageService {
     public BeverageRepo getBeverageRepo() {
         return beverageRepo;
     }
+    public void updateBeverage(Beverage b){
+        beverageRepo.updateBeverage(b);
+    }
+    public Beverage findBeverageById(int beverage_id){
+        return beverageRepo.findBeverageById(beverage_id);
+    }
 
 
 }

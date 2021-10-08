@@ -81,6 +81,12 @@
                 </a>
               </li>
               <li class="nav-item">
+                <a class="nav-link " th:href="@{'/plan'}">
+                  <i class="material-icons">person</i>
+                  <span>Vagtplan</span>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link " th:href="@{'https://dk.trustpilot.com/review/www.glostrup-bowling.dk'}">
                   <img src="/billeder/trustpilot.png" alt="Trustpilot" width="90" height="40">
                 </a>
@@ -184,7 +190,47 @@
                 </div>
               </div>
             </div>
+            <!-- End Default Light Table -->
 
+            <!-- Default Dark Table -->
+
+            <div class="row">
+              <div class="col">
+                <div class="card card-small mb-4">
+                  <div class="card-header border-bottom">
+                    <h5 class="m-0">Drikkevarer</h5>
+                    <a href="/createBeverage">
+                      <button class="btn btn-primary" style="background-color: green; border-color: green" id="btn-createBeverage">Tilføj ny drikkevare</button>
+                    </a>
+                  </div>
+                  <div class="card-body p-0 pb-3 text-center">
+                    <table class="table mb-0">
+                      <thead class="bg-light">
+                      <tr>
+                        <th scope="col" class="border-bottom-0">Drikkevare</th>
+                        <th scope="col" class="border-bottom-0">Pris</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr>
+                      <tr th:each="Beverage: ${beverages}">
+                        <td th:text = "${Beverage.name}"></td>
+                        <td th:text ="${Beverage.price}"></td>
+                        <td>
+                          <a th:href="@{'/beverage/'+${Beverage.beverageId}}">
+                            <button class="btn btn-warning" id="btn-beverageUpdate">Rediger</button>
+                          </a>
+                        <a th:href="@{'/deleteBeverage/'+${Beverage.beverageId}}">
+                          <button class="btn btn-warning" id="btn-beverageDelete" style="background-color: red">Slet</button>
+                        </a>
+                        </td>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End Default Dark Table -->
         </main>
       </div>
     </div>

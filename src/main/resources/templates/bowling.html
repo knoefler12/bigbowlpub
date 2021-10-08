@@ -84,6 +84,12 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link " th:href="@{'/plan'}">
+                            <i class="material-icons">person</i>
+                            <span>Vagtplan</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link " th:href="@{'https://dk.trustpilot.com/review/www.glostrup-bowling.dk'}">
                             <img src="/billeder/trustpilot.png" alt="Trustpilot" width="90" height="40">
                         </a>
@@ -146,7 +152,7 @@
                                                             data-row="${lane} ">
                                                         Forklaring
                                                     </button>
-                                                        <button  th:if="${lane.booked}" type="button" style="background-color: #008000; border-color: #008000" class="btn btn-primary" data-toggle="modal"
+                                                        <button  th:if="${lane.booked}" type="button" style="background-color: #0000FF; border-color: #0000FF" class="btn btn-primary" data-toggle="modal"
                                                                 th:attr="data-target=${'#exampleModal' + lane.id}"
                                                                 data-row="${lane}    ">
                                                             Info

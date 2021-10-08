@@ -3,9 +3,11 @@ package com.example.bigbowlxp.controllers;
 import com.example.bigbowlxp.models.Beverage;
 import com.example.bigbowlxp.services.BeverageService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
+@Controller
 public class BeverageController {
 
     private BeverageService beverageService;
@@ -27,9 +29,16 @@ public class BeverageController {
         return "redirect:/mad";
     }
 
-    @PostMapping("/updatePrice/{id}")
-    public String updateBeverage(@PathVariable int id) {
-        return null;
+    @GetMapping("/beverage/{beverageId}")
+    public String updateBeverage(@PathVariable int beverageId, Model model){
+        model.addAttribute("beverage", beverageService.findBeverageById(beverageId));
+        return "updateBeverage";
+    }
+
+    @PostMapping("/beverage/{id}")
+    public String updateBeverage(@ModelAttribute Beverage beverage) {
+        beverageService.updateBeverage(beverage);
+        return "redirect:/mad";
     }
 
     public BeverageService getBeverageService() {

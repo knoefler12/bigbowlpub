@@ -14,6 +14,12 @@ public class Beverage {
     public Beverage() {
     }
 
+    public Beverage(int beverageId, String name, double price) {
+        this.beverageId = beverageId;
+        this.name = name;
+        this.price = price;
+    }
+
     public int getBeverageId() {
         return beverageId;
     }

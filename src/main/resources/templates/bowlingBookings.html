@@ -83,6 +83,12 @@
             </a>
           </li>
           <li class="nav-item">
+            <a class="nav-link " th:href="@{'/plan'}">
+              <i class="material-icons">person</i>
+              <span>Vagtplan</span>
+            </a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link " th:href="@{'https://dk.trustpilot.com/review/www.glostrup-bowling.dk'}">
               <img src="/billeder/trustpilot.png" alt="Trustpilot" width="90" height="40">
             </a>
@@ -122,6 +128,10 @@
                       <th scope="col" class="border-0">Dato</th>
                       <th scope="col" class="border-0">Starttid</th>
                       <th scope="col" class="border-0">Varighed</th>
+                      <th scope="col" class="border-0">Sodavand</th>
+                      <th scope="col" class="border-0">Øl</th>
+                      <th scope="col" class="border-0">Opdater</th>
+                      <th scope="col" class="border-0">Total Pris</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -131,6 +141,30 @@
                       <td th:text="${bowlingBookings.date}"/>
                       <td th:text="${bowlingBookings.startTime}" />
                       <td th:text="${bowlingBookings.duration}" />
+
+                      <form th:action="@{'/bowlingBookings/'+${bowlingBookings.bookingId}}" method="GET">
+                       <td>
+
+                         <div class="form-group">
+                           <input th:placeholder="${bowlingBookings.beverages.get(0).amount}" name="sodaAmount" type="number" id="sodaAmount" class="form-control">
+                         </div>
+                       </td>
+
+                      <td>
+                        <div class="form-group">
+                          <input th:placeholder="${bowlingBookings.beverages.get(1).amount}" name="beerAmount" type="number" id="beerAmount" class="form-control">
+                        </div>
+                       </td>
+
+                      <td>
+
+                        <button type="submit" class="btn btn-primary" id="btn-warning" style="background-color: #FFA500; border-color: #FFA500">Opdater</button>
+
+
+                        </td>
+                      </form>
+
+                      <td th:text="${bowlingBookings.totalPrice} + ' DKK'"/>
                     </tr>
                     </tbody>
                   </table>
@@ -138,11 +172,7 @@
               </div>
             </div>
           </div>
-          <!-- End Default Light Table -->
-          <!-- Default Dark Table -->
-          <!-- End Default Dark Table -->
         </div>
-
     </main>
   </div>
 </div>

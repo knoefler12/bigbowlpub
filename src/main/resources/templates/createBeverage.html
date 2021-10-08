@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Equipment</title>
-    <meta name="description" content="A high-quality &amp; free Bootstrap admin dashboard template pack that comes with lots of templates and components.">
+    <title>Tilføj ny drikkevare</title>
+    <meta name="description" content="Big Bowl">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -14,52 +14,6 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
 </head>
 <body class="h-100">
-<div class="color-switcher animated">
-    <h5>Accent Color</h5>
-    <ul class="accent-colors">
-        <li class="accent-primary active" data-color="primary">
-            <i class="material-icons">check</i>
-        </li>
-        <li class="accent-secondary" data-color="secondary">
-            <i class="material-icons">check</i>
-        </li>
-        <li class="accent-success" data-color="success">
-            <i class="material-icons">check</i>
-        </li>
-        <li class="accent-info" data-color="info">
-            <i class="material-icons">check</i>
-        </li>
-        <li class="accent-warning" data-color="warning">
-            <i class="material-icons">check</i>
-        </li>
-        <li class="accent-danger" data-color="danger">
-            <i class="material-icons">check</i>
-        </li>
-    </ul>
-    <div class="actions mb-4">
-        <a class="mb-2 btn btn-sm btn-primary w-100 d-table mx-auto extra-action" href="https://designrevision.com/downloads/shards-dashboard-lite/">
-            <i class="material-icons">cloud</i> Download</a>
-        <a class="mb-2 btn btn-sm btn-white w-100 d-table mx-auto extra-action" href="https://designrevision.com/docs/shards-dashboard-lite">
-            <i class="material-icons">book</i> Documentation</a>
-    </div>
-    <div class="social-wrapper">
-        <div class="social-actions">
-            <h5 class="my-2">Help us Grow</h5>
-            <div class="inner-wrapper">
-                <a class="github-button" href="https://github.com/DesignRevision/shards-dashboard" data-icon="octicon-star" data-show-count="true" aria-label="Star DesignRevision/shards-dashboard on GitHub">Star</a>
-                <!-- <iframe style="width: 91px; height: 21px;"src="https://yvoschaap.com/producthunt/counter.html#href=https%3A%2F%2Fwww.producthunt.com%2Fr%2Fp%2F112998&layout=wide" width="56" height="65" scrolling="no" frameborder="0" allowtransparency="true"></iframe> -->
-            </div>
-        </div>
-        <div id="social-share" data-url="https://designrevision.com/downloads/shards-dashboard-lite/" data-text="🔥 Check out Shards Dashboard Lite, a free and beautiful Bootstrap 4 admin dashboard template!" data-title="share"></div>
-        <div class="loading-overlay">
-            <div class="spinner"></div>
-        </div>
-    </div>
-    <div class="close">
-        <i class="material-icons">close</i>
-    </div>
-</div>
-
 <div class="container-fluid">
     <div class="row">
         <!-- Main Sidebar -->
@@ -68,13 +22,11 @@
                 <nav class="navbar align-items-stretch navbar-light bg-white flex-md-nowrap border-bottom p-0">
                     <a class="navbar-brand w-100 mr-0" th:href="@{'/'}" style="line-height: 25px;">
                         <div class="d-table m-auto">
-                            <img id="main-logo" class="d-inline-block align-top mr-1" style="max-width: 25px;" src="/images/shards-dashboards-logo.svg" alt="Shards Dashboard">
-                            <span class="d-none d-md-inline ml-1">Big Bowl</span>
+                            <img id="main-logo" class="d-inline-block align-top mr-1" style="max-width: 45px;"
+                                 src="/billeder/Logo.png" alt="Shards Dashboard">
                         </div>
                     </a>
-                    <a class="toggle-sidebar d-sm-inline d-md-none d-lg-none">
-                        <i class="material-icons">&#xE5C4;</i>
-                    </a>
+
                 </nav>
             </div>
             <form action="#" class="main-sidebar__search w-100 border-right d-sm-flex d-md-none d-lg-none">
@@ -131,12 +83,6 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " th:href="@{'/plan'}">
-                            <i class="material-icons">person</i>
-                            <span>Vagtplan</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link " th:href="@{'https://dk.trustpilot.com/review/www.glostrup-bowling.dk'}">
                             <img src="/billeder/trustpilot.png" alt="Trustpilot" width="90" height="40">
                         </a>
@@ -165,16 +111,15 @@
                         <div class="col">
                             <div class="card card-small mb-4">
                                 <div class="card-header border-bottom">
-                                    <h6 class="m-0">Rediger Airhockey</h6>
+                                    <h6 class="m-0">Tilføj ny drikkevare</h6>
                                 </div>
                                 <div class="card-body p-0 pb-3 text-center">
-                                    <form th:action="@{${airhockeytables.airhockeyTablesId}}" method="post">
-                                        <input hidden name="airhockeyTableId" th:value="${airhockeytables.airhockeyTablesId}"><br>
-                                        <label>Status</label>
-                                        <input type="text" name="status" th:value="${airhockeytables.status}"><br>
-                                          <label>Beskrivelse</label>
-                                        <input type="text" name="description" th:value="${airhockeytables.description}"><br>
-                                        <input type="submit" value="Opdater">
+                                    <form action="/createBeverage" method="post">
+                                        <label>Navn på drikkevare</label>
+                                        <input type="text" name="name" value="name"><br>
+                                        <label>Pris</label>
+                                        <input type="text" name="price" value="price"><br>
+                                        <input class="btn btn-warning" id="btn-equipmentDelete" style="background-color: green; border-color: green; color: white" type="submit" value="Tilføj">
                                     </form>
                                 </div>
                             </div>

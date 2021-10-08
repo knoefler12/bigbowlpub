@@ -3,6 +3,7 @@ package com.example.bigbowlxp.repositories;
 import com.example.bigbowlxp.models.Activity;
 import com.example.bigbowlxp.models.AirHockeyTable;
 import com.example.bigbowlxp.models.Booking;
+import com.example.bigbowlxp.models.BookingBeverage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -34,6 +35,18 @@ public class BookingRepo{
         jdbcTemplate.update(sql, b.getCustomer_id(), b.getActivity().toString(), b.getDate(), b.getStartTime(), b.getDuration());
 
     }
+
+    public Booking fetchBookingById(int id){
+        String sql = "SELECT booking_id, b.customer_id, first_name, last_name, phone, activity, date, start_time, duration " +
+                "FROM sql4438617.bookings b " +
+                "JOIN sql4438617.customers USING (customer_id) " +
+                "WHERE booking_id = ?";
+        RowMapper<Booking> bookingRowMapper = new BeanPropertyRowMapper<>(Booking.class);
+        Booking booking = jdbcTemplate.queryForObject(sql, bookingRowMapper, id);
+        booking.setBeverages(fetchBookingBeveragesByBookingId(id));
+        return booking;
+    }
+
     public void deleteBooking(int id){
         String sql = "DELETE FROM booking_beverages WHERE bookingId = ?";
         jdbcTemplate.update(sql,id);
@@ -75,7 +88,11 @@ public List<Booking> fetchBookingByActivity(String activity){
                 "WHERE activity = 'AIRHOCKEY'" +
                 "ORDER BY date, start_time";
         RowMapper<Booking> bookingRowMapper = new BeanPropertyRowMapper<>(Booking.class);
-        return jdbcTemplate.query(sql, bookingRowMapper);
+        List<Booking> list = jdbcTemplate.query(sql, bookingRowMapper);
+        for(Booking booking : list){
+            booking.setBeverages(fetchBookingBeveragesByBookingId(booking.getBookingId()));
+        }
+        return list;
     }
 
     public List<Booking> fetchBowlingBooking(){
@@ -85,7 +102,11 @@ public List<Booking> fetchBookingByActivity(String activity){
                 "WHERE activity = 'BOWLING'" +
                 "ORDER BY date, start_time";
         RowMapper<Booking> bookingRowMapper = new BeanPropertyRowMapper<>(Booking.class);
-        return jdbcTemplate.query(sql, bookingRowMapper);
+        List<Booking> list = jdbcTemplate.query(sql, bookingRowMapper);
+        for(Booking booking : list){
+            booking.setBeverages(fetchBookingBeveragesByBookingId(booking.getBookingId()));
+        }
+        return list;
     }
 
     public List<Booking> fetchRestaurantBooking(){
@@ -96,6 +117,29 @@ public List<Booking> fetchBookingByActivity(String activity){
                 "ORDER BY date, start_time";
         RowMapper<Booking> bookingRowMapper = new BeanPropertyRowMapper<>(Booking.class);
         List<Booking> list = jdbcTemplate.query(sql, bookingRowMapper);
+        for(Booking booking : list){
+            booking.setBeverages(fetchBookingBeveragesByBookingId(booking.getBookingId()));
+        }
         return list;
+    }
+
+    public List<BookingBeverage> fetchBookingBeveragesByBookingId(int id){
+        String sql = "SELECT booking_id, beverages.beverage_id, name, price, amount FROM booking_beverages " +
+                "JOIN beverages USING ( beverage_id) " +
+                "WHERE booking_id = ?";
+        RowMapper<BookingBeverage> bookingBeverageRowMapper = new BeanPropertyRowMapper<>(BookingBeverage.class);
+        List<BookingBeverage> list = jdbcTemplate.query(sql, bookingBeverageRowMapper, id);
+        return list;
+    }
+
+    public void editBookingBeverages(BookingBeverage bb){
+        String sql = "UPDATE booking_beverages SET amount = ? WHERE booking_id = ? AND beverage_id = ?";
+        jdbcTemplate.update(sql, bb.getAmount(), bb.getBookingId(), bb.getBeverageId());
+    }
+
+    public void editBooking(int id){
+        String sql = "UPDATE sql4438617.bookings SET date = ?, start_time = ?, duration = ? WHERE booking_id = ?";
+        jdbcTemplate.update(sql);
+
     }
 }
