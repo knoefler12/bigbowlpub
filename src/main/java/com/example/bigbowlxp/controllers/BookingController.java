@@ -1,7 +1,5 @@
 package com.example.bigbowlxp.controllers;
 
-import com.example.bigbowlxp.models.Activity;
-import com.example.bigbowlxp.models.Beverage;
 import com.example.bigbowlxp.models.Booking;
 import com.example.bigbowlxp.models.BookingBeverage;
 import com.example.bigbowlxp.services.BookingService;
@@ -11,7 +9,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDate;
 import java.util.*;
 
 @Controller
@@ -38,14 +35,6 @@ public class BookingController {
         model.addAttribute("airhockeybookings", bookingList);
         return "bookings";
     }
-
-    @GetMapping("/bookings/{activity}")
-    public String fetchBookingByActivity(@PathVariable String activity, Model model) {
-        //Booking booking = bookingService.fetchBookingByActivity(activity);
-        //model.addAttribute("booking", booking);
-        return "booking";
-    }
-
     
 
     @GetMapping("/createBooking")
@@ -96,8 +85,8 @@ public class BookingController {
 
     @GetMapping("/bowlingBookings/{bookingId}")
     public String updateBowlingBookings(@PathVariable int bookingId,
-                                        @RequestParam int sodaAmount,
-                                        @RequestParam int beerAmount){
+                                        @RequestParam (required = false)int sodaAmount,
+                                        @RequestParam (required = false)int beerAmount){
         Booking booking = bookingService.fetchBookingById(bookingId);
         try{
             booking.getBeverages();
