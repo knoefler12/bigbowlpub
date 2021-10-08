@@ -219,8 +219,6 @@ public class BookingController {
         }catch (Exception e){
             booking.getBeverages().add(new BookingBeverage(bookingId, 2, beerAmount));
         }
-        System.out.println(booking.getBeverages().get(0).getAmount());
-        System.out.println(booking.getBeverages().get(1).getAmount());
         bookingService.editBookingBeverages(booking.getBeverages().get(0));
         bookingService.editBookingBeverages(booking.getBeverages().get(1));
 
