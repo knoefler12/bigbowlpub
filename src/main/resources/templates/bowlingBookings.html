@@ -141,29 +141,21 @@
                       <td th:text="${bowlingBookings.date}"/>
                       <td th:text="${bowlingBookings.startTime}" />
                       <td th:text="${bowlingBookings.duration}" />
-
                       <form th:action="@{'/bowlingBookings/'+${bowlingBookings.bookingId}}" method="GET">
                        <td>
-
                          <div class="form-group">
                            <input th:placeholder="${bowlingBookings.beverages.get(0).amount}" name="sodaAmount" type="number" id="sodaAmount" class="form-control">
                          </div>
                        </td>
-
                       <td>
                         <div class="form-group">
                           <input th:placeholder="${bowlingBookings.beverages.get(1).amount}" name="beerAmount" type="number" id="beerAmount" class="form-control">
                         </div>
                        </td>
-
                       <td>
-
                         <button type="submit" class="btn btn-primary" id="btn-warning" style="background-color: #FFA500; border-color: #FFA500">Opdater</button>
-
-
                         </td>
                       </form>
-
                       <td th:text="${bowlingBookings.totalPrice} + ' DKK'"/>
                     </tr>
                     </tbody>
